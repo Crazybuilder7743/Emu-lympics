@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4564293151427b4e9ec33c063d05e4f, type: 3}
+  m_Name: LevelHolder
+  m_EditorClassIdentifier: Assembly-CSharp::LevelHolder
+  levels:
+  - levelID: 0
+    levelName: Hell March
+    mask1: {fileID: 11400000, guid: 0e4aaacb52cb66d48926113998409821, type: 2}
+    mask2: {fileID: 11400000, guid: bd730421f0d669540b3f0235fd31b5ad, type: 2}
+    mask3: {fileID: 11400000, guid: 322fde126ffac2a45aa2cd9c51ec825a, type: 2}
+  - levelID: 1
+    levelName: Sunset
+    mask1: {fileID: 11400000, guid: 322fde126ffac2a45aa2cd9c51ec825a, type: 2}
+    mask2: {fileID: 11400000, guid: d6194e3f437ba584e8246c62de122db3, type: 2}
+    mask3: {fileID: 11400000, guid: 87b2570d377ffb0448eb2bd807dd56f3, type: 2}
+  - levelID: 2
+    levelName: Beach
+    mask1: {fileID: 0}
+    mask2: {fileID: 0}
+    mask3: {fileID: 0}
