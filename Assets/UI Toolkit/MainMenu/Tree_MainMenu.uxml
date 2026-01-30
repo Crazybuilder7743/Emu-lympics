@@ -1,0 +1,13 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/MainMenu/Style_MainMenu.uss?fileID=7433441132597879392&amp;guid=020784a38d14f114fa7f054a606fb9aa&amp;type=3#Style_MainMenu"/>
+    <ui:VisualElement name="Parent" style="flex-grow: 1;">
+        <ui:VisualElement style="width: 300px; min-width: 300px; max-width: 300px; height: 500px; min-height: 500px; max-height: 500px; position: absolute; background-color: rgb(180, 35, 35); top: 302px; left: 173px; justify-content: space-evenly;">
+            <ui:VisualElement name="SelectLevelButton" class="button">
+                <ui:Label text="Levels" class="buttonLabel"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="ExitGameButton" class="button">
+                <ui:Label text="EXIt" class="buttonLabel"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

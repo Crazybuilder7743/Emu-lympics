@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HeadMask
   maskID: 0
   maskName: GravitiMask
-  maskColor: {r: 0.49278724, g: 0.072312206, b: 0.6132076, a: 0}
+  maskColor: {r: 0.49278724, g: 0.072312206, b: 0.6132076, a: 1}

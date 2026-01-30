@@ -10,4 +10,6 @@ public class LevelInfo
     public HeadMask mask1;
     public HeadMask mask2;
     public HeadMask mask3;
+
+    public SceneField sceneToLoad;
 }

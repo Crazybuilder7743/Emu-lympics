@@ -1,0 +1,38 @@
+:root {
+}
+
+.button {
+    width: 300px;
+    min-width: 300px;
+    max-width: 300px;
+    height: 50px;
+    min-height: 50px;
+    max-height: 50px;
+    background-color: rgb(37, 212, 182);
+    transition-duration: 0.1s;
+}
+
+.buttonLabel {
+    width: 300px;
+    min-width: 300px;
+    max-width: 300px;
+    height: 50px;
+    min-height: 50px;
+    max-height: 50px;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    -unity-text-align: middle-center;
+    -unity-font-definition: url("project://database/Assets/06_Ressources/Moogalator-yYJr3.ttf?fileID=12800000&guid=d9c837c3ab01b8a4c95392a1a3a5065e&type=3#Moogalator-yYJr3");
+    font-size: 30px;
+}
+
+.button:hover {
+    transition-duration: 0.1s;
+    rotate: 15deg;
+}
