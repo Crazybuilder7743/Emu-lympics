@@ -1,0 +1,12 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/LevelSelection/Base/Style_LevelSlot.uss?fileID=7433441132597879392&amp;guid=d2c5aad2ae4ea9449b51aa9b05e31e99&amp;type=3#Style_LevelSlot"/>
+    <ui:VisualElement name="Parent" class="parent" style="width: 320px; min-width: 320px; max-width: 320px; height: 450px; min-height: 450px; max-height: 450px; justify-content: center;">
+        <ui:Label text="levelName" name="LevelName" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: middle-center; width: 300px; min-width: 300px; max-width: 300px; height: 50px; min-height: 50px; max-height: 50px; -unity-font-definition: url(&quot;project://database/Assets/06_Ressources/Moogalator-yYJr3.ttf?fileID=12800000&amp;guid=d9c837c3ab01b8a4c95392a1a3a5065e&amp;type=3#Moogalator-yYJr3&quot;); font-size: 20px;"/>
+        <ui:VisualElement style="flex-grow: 1; width: 300px; min-width: 300px; max-width: 300px; max-height: 300px; min-height: 300px; height: 300px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; background-color: rgb(38, 217, 164);"/>
+        <ui:VisualElement style="flex-grow: 1; width: 300px; min-width: 300px; height: 50px; min-height: 50px; max-height: 50px; max-width: 300px; flex-direction: row;">
+            <ui:VisualElement name="Mask1" class="maskSlot"/>
+            <ui:VisualElement name="Mask2" class="maskSlot"/>
+            <ui:VisualElement name="Mask3" class="maskSlot"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

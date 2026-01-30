@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HeadMask
   maskID: 1
   maskName: ShellMask
-  maskColor: {r: 0.0504628, g: 0.509434, b: 0.11630693, a: 0}
+  maskColor: {r: 0.0504628, g: 0.509434, b: 0.11630693, a: 1}

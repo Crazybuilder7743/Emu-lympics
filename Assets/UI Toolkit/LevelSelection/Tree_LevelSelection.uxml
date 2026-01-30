@@ -1,0 +1,8 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/LevelSelection/Style_LevelSelection.uss?fileID=7433441132597879392&amp;guid=1505dc676ede2b743a4bb757c139af5a&amp;type=3#Style_LevelSelection"/>
+    <ui:VisualElement name="Parent" style="flex-grow: 1; justify-content: space-around;">
+        <ui:VisualElement name="SelectionContainer" style="width: 1600px; min-width: 1600px; max-width: 1600px; height: 1000px; min-height: 1000px; max-height: 1000px; align-self: center; background-color: rgb(202, 106, 106); justify-content: space-around;">
+            <ui:ScrollView horizontal-scroller-visibility="Hidden" name="LevelList"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
