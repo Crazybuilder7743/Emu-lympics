@@ -1,0 +1,6 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="Parent" style="flex-grow: 1; flex-direction: row;">
+        <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/03_Art(HabenwirJaNetVieles)/RenderTextures/SplitScreen1.renderTexture?fileID=8400000&amp;guid=66a283414727641408b293523eb7abda&amp;type=2#SplitScreen1&quot;);"/>
+        <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/03_Art(HabenwirJaNetVieles)/RenderTextures/SplitScreen2.renderTexture?fileID=8400000&amp;guid=86ec3758d3e77d34684cc694a76453e1&amp;type=2#SplitScreen2&quot;);"/>
+    </ui:VisualElement>
+</ui:UXML>
