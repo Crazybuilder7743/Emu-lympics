@@ -250,6 +250,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6466871939811119706}
   - component: {fileID: 5943703891218863360}
+  - component: {fileID: -9009637121097624195}
+  - component: {fileID: -6420140789266144427}
   m_Layer: 0
   m_Name: PlayerSchmayer
   m_TagString: Untagged
@@ -287,3 +289,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSplitScreenInfo
   ownCamera: {fileID: 8643650596627822774}
+--- !u!114 &-9009637121097624195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9218201412825862784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 892e2998845a5304893fcc8cee291fee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMaskManager
+--- !u!114 &-6420140789266144427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9218201412825862784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a0e64b3e81f2934f8239d7a6fd551de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  maxHealth: 100
+  currentHealth: 0
+  baseHealthRegen: 0.1
+  healthRegenModifier: 1
