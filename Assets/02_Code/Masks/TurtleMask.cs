@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TurtleMask : Mask
 {
-    private static int ID = 1;
+    public static int ID = 1;
     private const float DEFAULT_REGEN_MOD = 1f;
     private const float DEFAULT_SPEED_MOD = 1f;
     public float healthRegenmodifier = 5;
