@@ -45,7 +45,7 @@
 .cooldownMask {
     background-image: url("project://database/Assets/03_Art(HabenwirJaNetVieles)/reverseActuallyTransparentMask.png?fileID=2800000&guid=96a7a1e31afa62740b03eb5eb26a1eb6&type=3#reverseActuallyTransparentMask");
     width: 530px;
-    height: 154px;
+    height: 229px;
     min-width: 530px;
     max-width: 530px;
     min-height: 1px;
@@ -59,4 +59,50 @@
     top: 91px;
     -unity-background-image-tint-color: rgb(219, 53, 204);
     rotate: 180deg;
+}
+
+#Healthbar > #unity-progress-bar > .unity-progress-bar__background > .unity-progress-bar__progress {
+    background-color: rgb(0, 255, 4);
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+}
+
+#Healthbar > #unity-progress-bar > .unity-progress-bar__background {
+    background-color: rgb(241, 47, 47);
+    height: 35px;
+    min-height: 35px;
+    max-height: 35px;
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+}
+
+.healthBar {
+    width: 600px;
+    min-width: 600px;
+    max-width: 600px;
+    height: 35px;
+    min-height: 35px;
+    max-height: 35px;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+.healthBarContainer {
+    width: 600px;
+    height: 35px;
+    min-width: 600px;
+    max-width: 600px;
+    min-height: 35px;
+    max-height: 35px;
+    top: 25px;
 }
