@@ -3,7 +3,7 @@
     <ui:VisualElement name="Parent" style="flex-grow: 1; flex-direction: row;">
         <ui:VisualElement name="Left" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/03_Art(HabenwirJaNetVieles)/RenderTextures/SplitScreen1.renderTexture?fileID=8400000&amp;guid=66a283414727641408b293523eb7abda&amp;type=2#SplitScreen1&quot;); background-color: rgb(255, 196, 196); border-right-width: 5px; border-right-color: rgb(0, 0, 0);">
             <ui:VisualElement name="P1MaskContainer" class="maskContainer">
-                <ui:VisualElement name="P1Mask1" class="mask" style="background-color: rgb(219, 30, 30); height: 230px; min-height: 230px; max-height: 230px;">
+                <ui:VisualElement name="P1Mask1" class="mask" style="height: 230px; min-height: 230px; max-height: 230px;">
                     <ui:VisualElement name="BGMask" class="bgMask"/>
                     <ui:VisualElement name="CooldownMask" class="cooldownMask"/>
                 </ui:VisualElement>
