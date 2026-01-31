@@ -63,7 +63,6 @@ public class PlayerInput : MonoBehaviour
         RegisterInputAction(inputActions.Player.JumpPlayer2, OnPlayer2JumpInput);
         RegisterInputAction(inputActions.Player.SlidePlayer1, OnPlayer1SlideInput);
         RegisterInputAction(inputActions.Player.SlidePlayer2, OnPlayer2SlideInput);
-        RegisterInputAction(inputActions.Player.RightPlayer1, OnPlayer1RightInput);
         RegisterInputAction(inputActions.Player.Mask1Player1, OnPlayer1ChooseMask1Input);
         RegisterInputAction(inputActions.Player.Mask1Player2, OnPlayer2ChooseMask1Input);
         RegisterInputAction(inputActions.Player.Mask2Player1, OnPlayer1ChooseMask2Input);
@@ -90,7 +89,6 @@ public class PlayerInput : MonoBehaviour
         UnregisterInputAction(inputActions.Player.JumpPlayer2, OnPlayer2JumpInput);
         UnregisterInputAction(inputActions.Player.SlidePlayer1, OnPlayer1SlideInput);
         UnregisterInputAction(inputActions.Player.SlidePlayer2, OnPlayer2SlideInput);
-        UnregisterInputAction(inputActions.Player.RightPlayer1, OnPlayer1RightInput);
         UnregisterInputAction(inputActions.Player.Mask1Player1, OnPlayer1ChooseMask1Input);
         UnregisterInputAction(inputActions.Player.Mask1Player2, OnPlayer2ChooseMask1Input);
         UnregisterInputAction(inputActions.Player.Mask2Player1, OnPlayer1ChooseMask2Input);
@@ -151,6 +149,7 @@ public class PlayerInput : MonoBehaviour
     {
         if (context.performed)
         {
+            Debug.Log("P1 Jump performed!");
             Player1JumpInput?.Invoke();
         }
     }
@@ -251,6 +250,15 @@ public class PlayerInput : MonoBehaviour
         {
             PauseInput?.Invoke();
         }
+    }
+    public float GetMoveAxis(PlayerIndex index)
+    {
+        bool left = index == PlayerIndex.Player1 ? Player1LeftInput : Player2LeftInput;
+        bool right = index == PlayerIndex.Player1 ? Player1RightInput : Player2RightInput;
+
+        // Right = +1, Left = -1, both or none = 0
+        if (left == right) return 0f;
+        return right ? 1f : -1f;
     }
 
 }
