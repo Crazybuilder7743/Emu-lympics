@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngineInternal;
@@ -21,6 +22,12 @@ public class InitLevel : MonoBehaviour
         player1.player.playerSplitScreenInfo.ownCamera.targetTexture = player1Screen;
         SetUpPlayer(ref player2, true);
         player2.player.playerSplitScreenInfo.ownCamera.targetTexture = player2Screen;
+        List<int> maskIDS = new List<int>();
+        maskIDS.Add(LevelInfo.currentLevel.mask1.maskID);
+        maskIDS.Add(LevelInfo.currentLevel.mask2.maskID);
+        maskIDS.Add(LevelInfo.currentLevel.mask3.maskID);
+        player1.player.maskmanager.Init(maskIDS) ;
+        player2.player.maskmanager.Init(maskIDS) ;
         player1obj = player1.player;
         player2obj = player2.player;
     }

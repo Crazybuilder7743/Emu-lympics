@@ -7,9 +7,9 @@ public class PlayerMaskManager
     public float CurrentMaskChangeCooldown => Mathf.Clamp(Time.time - lastMaskChange,0,switchCooldown)/switchCooldown;
     private float lastMaskChange = float.MinValue;
     List<Mask> masks = new List<Mask>();
-    public delegate void OnMaskChange(Mask mask);
+    public delegate void OnMaskChange(int id);
     public event OnMaskChange maskChange;
-    private int currentID = 0;
+    public int currentID = 0;
     public Mask CurrentMask => masks[currentID];
     public void Init(IEnumerable<int> maskIDs) 
     {
@@ -29,15 +29,17 @@ public class PlayerMaskManager
             return CurrentMask;
         }
         lastMaskChange = Time.time;
+        int i = 0;
         foreach (Mask mask in masks) 
         {
             if(mask.GetID() == maskID) 
             {
                 CurrentMask.Deactivate();
-                currentID = maskID;
-                maskChange?.Invoke(mask);
+                currentID = i;
+                maskChange?.Invoke(currentID);
                 CurrentMask.Activate();
             }
+            i++;
         }
         return CurrentMask;
     }
