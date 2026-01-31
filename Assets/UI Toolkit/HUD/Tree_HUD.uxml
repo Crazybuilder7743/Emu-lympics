@@ -1,6 +1,37 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/HUD/Style_HUD.uss?fileID=7433441132597879392&amp;guid=7cbc094acaf29dd4cb12b6f42ca74d0c&amp;type=3#Style_HUD"/>
     <ui:VisualElement name="Parent" style="flex-grow: 1; flex-direction: row;">
-        <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/03_Art(HabenwirJaNetVieles)/RenderTextures/SplitScreen1.renderTexture?fileID=8400000&amp;guid=66a283414727641408b293523eb7abda&amp;type=2#SplitScreen1&quot;);"/>
-        <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/03_Art(HabenwirJaNetVieles)/RenderTextures/SplitScreen2.renderTexture?fileID=8400000&amp;guid=86ec3758d3e77d34684cc694a76453e1&amp;type=2#SplitScreen2&quot;);"/>
+        <ui:VisualElement name="Left" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/03_Art(HabenwirJaNetVieles)/RenderTextures/SplitScreen1.renderTexture?fileID=8400000&amp;guid=66a283414727641408b293523eb7abda&amp;type=2#SplitScreen1&quot;); background-color: rgb(255, 196, 196); border-right-width: 5px; border-right-color: rgb(0, 0, 0);">
+            <ui:VisualElement name="P1MaskContainer" class="maskContainer">
+                <ui:VisualElement name="P1Mask1" class="mask" style="background-color: rgb(219, 30, 30); height: 230px; min-height: 230px; max-height: 230px;">
+                    <ui:VisualElement name="BGMask" class="bgMask"/>
+                    <ui:VisualElement name="CooldownMask" class="cooldownMask"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="P1Mask2" class="mask" style="flex-grow: 1;">
+                    <ui:VisualElement name="BGMask" class="bgMask"/>
+                    <ui:VisualElement name="CooldownMask" class="cooldownMask"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="P1Mask3" class="mask" style="flex-grow: 1;">
+                    <ui:VisualElement name="BGMask" class="bgMask"/>
+                    <ui:VisualElement name="CooldownMask" class="cooldownMask"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="Right" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/03_Art(HabenwirJaNetVieles)/RenderTextures/SplitScreen2.renderTexture?fileID=8400000&amp;guid=86ec3758d3e77d34684cc694a76453e1&amp;type=2#SplitScreen2&quot;); background-color: rgb(231, 95, 95); border-left-color: rgb(0, 0, 0); border-left-width: 5px;">
+            <ui:VisualElement name="P2MaskContainer" class="maskContainer">
+                <ui:VisualElement name="P2Mask1" class="mask">
+                    <ui:VisualElement name="BGMask" class="bgMask"/>
+                    <ui:VisualElement name="CooldownMask" class="cooldownMask"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="P2Mask2" class="mask" style="flex-grow: 1;">
+                    <ui:VisualElement name="BGMask" class="bgMask"/>
+                    <ui:VisualElement name="CooldownMask" class="cooldownMask"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="P2Mask3" class="mask" style="flex-grow: 1;">
+                    <ui:VisualElement name="BGMask" class="bgMask"/>
+                    <ui:VisualElement name="CooldownMask" class="cooldownMask"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

@@ -9,7 +9,7 @@ public class UIController_MainMenu : MonoBehaviour
     private UIDocument _uiDoc;
     private VisualElement _root;
 
-    private VisualElement _createLobbyButton;
+    private VisualElement _levelsButton;
     private VisualElement _exitButton;
 
     [SerializeField] private SceneField _levelSelectionScene;
@@ -34,8 +34,8 @@ public class UIController_MainMenu : MonoBehaviour
 
     private void RegisterCallbacks()
     {
-        _createLobbyButton = _root.Q<VisualElement>("LevelsButton");
-        _createLobbyButton.RegisterCallback<ClickEvent>(OnLevelsClicked);
+        _levelsButton = _root.Q<VisualElement>("LevelsButton");
+        _levelsButton.RegisterCallback<ClickEvent>(OnLevelsClicked);
 
         _exitButton = _root.Q<VisualElement>("ExitButton");
         _exitButton.RegisterCallback<ClickEvent>(OnExitButtonClicked);

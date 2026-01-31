@@ -1,0 +1,63 @@
+:root {
+}
+
+.maskContainer {
+    position: absolute;
+    width: 600px;
+    min-width: 600px;
+    max-width: 600px;
+    height: 230px;
+    min-height: 230px;
+    max-height: 230px;
+    top: 938px;
+    left: 42px;
+    flex-direction: row;
+    background-color: rgb(90, 253, 56);
+}
+
+.mask {
+    width: 200px;
+    min-width: 200px;
+    max-width: 200px;
+    height: 300px;
+    min-height: 300px;
+    max-height: 300px;
+}
+
+.bgMask {
+    background-image: url("project://database/Assets/03_Art(HabenwirJaNetVieles)/reverseActuallyTransparentMask.png?fileID=2800000&guid=96a7a1e31afa62740b03eb5eb26a1eb6&type=3#reverseActuallyTransparentMask");
+    width: 530px;
+    height: 229px;
+    min-width: 530px;
+    max-width: 530px;
+    min-height: 229px;
+    max-height: 229px;
+    scale: 0.35 0.35;
+    transform-origin: left top;
+    -unity-background-scale-mode: scale-and-crop;
+    background-position-y: top 0;
+    background-position-x: left 0;
+    left: 192px;
+    top: 91px;
+    position: absolute;
+    rotate: 180deg;
+}
+
+.cooldownMask {
+    background-image: url("project://database/Assets/03_Art(HabenwirJaNetVieles)/reverseActuallyTransparentMask.png?fileID=2800000&guid=96a7a1e31afa62740b03eb5eb26a1eb6&type=3#reverseActuallyTransparentMask");
+    width: 530px;
+    height: 154px;
+    min-width: 530px;
+    max-width: 530px;
+    min-height: 1px;
+    max-height: 229px;
+    scale: 0.35 0.35;
+    transform-origin: left top;
+    -unity-background-scale-mode: scale-and-crop;
+    background-position-y: top 0;
+    background-position-x: left 0;
+    left: 192px;
+    top: 91px;
+    -unity-background-image-tint-color: rgb(219, 53, 204);
+    rotate: 180deg;
+}
