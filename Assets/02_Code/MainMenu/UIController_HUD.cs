@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,6 +9,8 @@ public class UIController_HUD : MonoBehaviour
 {
     private UIDocument _uiDoc;
     private VisualElement _root;
+
+    public static UIController_HUD instance { get; private set; }
 
     private VisualElement _p1MaskContainer;
     private VisualElement _p1Mask1;
@@ -45,6 +48,14 @@ public class UIController_HUD : MonoBehaviour
         _uiDoc = GetComponent<UIDocument>();
         _root = _uiDoc.rootVisualElement;
 
+        if (instance != null)
+        {
+            Destroy(gameObject);
+            Debug.Log("found more than one UIController_HUD in the scene");
+            return;
+        }
+        instance = this;
+
         RegisterCallbacks();
     }
 
@@ -52,6 +63,7 @@ public class UIController_HUD : MonoBehaviour
     {
         _currentDebugLevel = LevelInfo.currentLevel;
         InitLevel.player1obj.maskmanager.maskChange += OnP1MaskChanged;
+
     }
 
     private void Update()
@@ -61,26 +73,30 @@ public class UIController_HUD : MonoBehaviour
             //_p1CDMask1.style.display = DisplayStyle.Flex;
 
             _currentP1CD = InitLevel.player1obj.maskmanager.CurrentMaskChangeCooldown;
-            //Debug.Log("currentSignatureCooldown = " + _currentSignatureCooldown);
-            //Debug.Log("SignatureCooldown = " + _signatureCooldown);
+            Debug.Log("currentP1Cooldown = " + _currentP1CD);
+            Debug.Log("P1Cooldown = " + _p1CD);
             _p1PercentCD = 1 - (_currentP1CD / _p1CD);
-            //Debug.Log("cooldownPercent = " + _percentCooldown);
+            Debug.Log("cooldownPercent = " + _p1PercentCD);
             _p1CurrentPixelValue = MASK_HEIGHT - (Mathf.FloorToInt(_p1PercentCD * MASK_HEIGHT));
-            //Debug.Log("currentPixelValue = " + _currentPixelValue);
+            Debug.Log("currentPixelValue = " + _p1CurrentPixelValue);
 
-            if(_isP1Mask1OnCD)
+            if (_isP1Mask1OnCD)
             {
                 _p1CDMask1.style.height = _p1CurrentPixelValue;
+                _p1CDMask3.style.height = _p1CurrentPixelValue;
             }
 
             if (_isP1Mask2OnCD)
             {
                 _p1CDMask2.style.height = _p1CurrentPixelValue;
+                _p1CDMask3.style.height = _p1CurrentPixelValue;
             }
 
             if (_isP1Mask3OnCD)
             {
-                _p1CDMask3.style.height = _p1CurrentPixelValue;
+
+                _p1CDMask1.style.height = _p1CurrentPixelValue;
+                _p1CDMask1.style.height = _p1CurrentPixelValue;
             }
 
 
@@ -97,11 +113,22 @@ public class UIController_HUD : MonoBehaviour
         }
     }
 
-    private void OnP1MaskChanged(Mask mask)
+    private void OnP1MaskChanged(int index)
     {
         _hasP1SwitchedMaskRecently = true;
 
-        throw new System.NotImplementedException();
+        switch(index)
+        {
+            case 0:
+                _isP1Mask1OnCD = true;
+                break;
+            case 1:
+                _isP1Mask2OnCD = true;
+                break;
+            case 2:
+                _isP1Mask3OnCD = true;
+                break;
+        }
     }
 
     private void RegisterCallbacks()
@@ -140,6 +167,14 @@ public class UIController_HUD : MonoBehaviour
     }
 
 
-
+    //private async void TestMyUI()
+    //{
+    //    await Task.Delay(10000);
+    //    OnP1MaskChanged(0);
+    //    await Task.Delay(5000);
+    //    OnP1MaskChanged(1);
+    //    await Task.Delay(5000);
+    //    OnP1MaskChanged(2);
+    //}
 
 }

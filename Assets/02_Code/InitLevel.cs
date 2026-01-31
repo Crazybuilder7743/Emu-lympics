@@ -15,8 +15,6 @@ public class InitLevel : MonoBehaviour
     [SerializeField] RenderTexture player1Screen;
     [SerializeField] RenderTexture player2Screen;
     [SerializeField] Player playerPrefab;
-
-    [SerializeField] UIController_HUD _HUD;
     private void InitGame() 
     {
         SetUpPlayer(ref player1,false);
@@ -32,7 +30,7 @@ public class InitLevel : MonoBehaviour
         player1obj = player1.player;
         player2obj = player2.player;
 
-        _HUD.InitUI();
+        UIController_HUD.instance.InitUI();
     }
     public void Start()
     {
