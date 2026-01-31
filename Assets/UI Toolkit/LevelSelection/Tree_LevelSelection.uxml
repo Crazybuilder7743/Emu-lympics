@@ -1,8 +1,15 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/LevelSelection/Style_LevelSelection.uss?fileID=7433441132597879392&amp;guid=1505dc676ede2b743a4bb757c139af5a&amp;type=3#Style_LevelSelection"/>
-    <ui:VisualElement name="Parent" style="flex-grow: 1; justify-content: space-around;">
-        <ui:VisualElement name="SelectionContainer" style="width: 1600px; min-width: 1600px; max-width: 1600px; height: 1000px; min-height: 1000px; max-height: 1000px; align-self: center; background-color: rgb(202, 106, 106); justify-content: space-around;">
-            <ui:ScrollView horizontal-scroller-visibility="Hidden" name="LevelList"/>
+    <ui:VisualElement name="Parent" style="flex-grow: 1; justify-content: space-around; flex-direction: row; background-image: url(&quot;project://database/Assets/03_Art(HabenwirJaNetVieles)/TilingEmu.png?fileID=2800000&amp;guid=5bcda91d831ce0547af3703bc40d9292&amp;type=3#TilingEmu&quot;);">
+        <ui:VisualElement name="Left" style="width: 20%; min-width: 20%; max-width: 20px;">
+            <ui:VisualElement name="ExitButton" class="exitButton" style="border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px; border-top-left-radius: 64px; border-top-right-radius: 64px; border-bottom-right-radius: 64px; border-bottom-left-radius: 64px;">
+                <ui:Label text="EXIT" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: middle-center; width: 300px; min-width: 300px; max-width: 300px; height: 100px; min-height: 100px; max-height: 100px; -unity-font-definition: url(&quot;project://database/Assets/06_Ressources/Sacloud-R9g4M.otf?fileID=12800000&amp;guid=b857b7333b28d874a915b022921bfb64&amp;type=3#Sacloud-R9g4M&quot;); font-size: 88px; top: 5px;"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="Right" style="flex-grow: 1; width: 80%; min-width: 80%; max-width: 80%;">
+            <ui:VisualElement name="SelectionContainer" style="width: 1300px; min-width: 1300px; max-width: 1300px; height: 1000px; min-height: 1000px; max-height: 1000px; align-self: center; background-color: rgba(202, 106, 106, 0.52); justify-content: space-around; top: 40px;">
+                <ui:ScrollView horizontal-scroller-visibility="Hidden" name="LevelList" vertical-scroller-visibility="Hidden"/>
+            </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

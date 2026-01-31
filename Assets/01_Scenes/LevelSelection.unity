@@ -349,6 +349,7 @@ GameObject:
   - component: {fileID: 1344241219}
   - component: {fileID: 1344241218}
   - component: {fileID: 1344241220}
+  - component: {fileID: 1344241221}
   m_Layer: 5
   m_Name: UIDoc_LevelSelection
   m_TagString: Untagged
@@ -408,6 +409,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UIController_LevelSelection
   _levelHolder: {fileID: 11400000, guid: 7876503aa6555064db1c4f00e0ed25b9, type: 2}
   _baseLevelSlot: {fileID: 9197481963319205126, guid: 0556aca9a0be09c478f09964efa8bf33, type: 3}
+--- !u!114 &1344241221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344241217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9455db862b632e44b8343e19df5103fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIController_MainMenu
+  _levelSelectionScene:
+    m_SceneAsset: {fileID: 0}
+    m_SceneName: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

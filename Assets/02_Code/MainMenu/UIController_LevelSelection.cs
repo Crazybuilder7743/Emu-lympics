@@ -43,7 +43,7 @@ public class UIController_LevelSelection : MonoBehaviour
         wrapContainer.style.flexDirection = FlexDirection.Column;
         _scrollViewLevelSelection.Add(wrapContainer);
 
-        int itemsPerRow = 5;
+        int itemsPerRow = 4;
         int counter = 0;
 
         VisualElement currentRow = null;
