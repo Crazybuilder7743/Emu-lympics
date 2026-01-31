@@ -15,7 +15,15 @@ public class PlayerMovement : MonoBehaviour
     bool _grounded;
     Rigidbody _rb;
     Vector3 _moveDirection;
-    private const float _gravity = -9.81f;
+    private const float _gravity = -9.81f; 
+    [SerializeField] Transform groundProbeStand;
+    [SerializeField] Transform groundProbeSlide;
+
+    [SerializeField] float groundRadius = 0.18f;
+    [SerializeField] float groundCheckDistance = 0.12f;
+
+    bool _sliding = false;
+
 
     public void Init(bool player1)
     {
@@ -31,6 +39,8 @@ public class PlayerMovement : MonoBehaviour
         {
             PlayerInput.Instance.Player2JumpInput += Jump;
         }
+        _rb = GetComponent<Rigidbody>();
+        Debug.Log($"{name} Initialized");
     }
 
     void OnDestroy()
@@ -55,6 +65,8 @@ public class PlayerMovement : MonoBehaviour
         bool ignoreGround = Time.time < _ignoreGroundUntil;
         _grounded = ignoreGround ? false : GroundCheck();
 
+            Debug.Log($"Grounded: {_grounded}");
+
         if (_jumpRequested)
         {
             _jumpRequested = false;
@@ -72,6 +84,7 @@ public class PlayerMovement : MonoBehaviour
 
     void DoJump()
     {
+        Debug.Log($"{name} Jump() called. grounded={_grounded} jumping={_jumping}");
         var v = _rb.linearVelocity;
         v.y = 0f;
         _rb.linearVelocity = v;
@@ -103,36 +116,27 @@ public class PlayerMovement : MonoBehaviour
 
     public bool GroundCheck()
     {
-        if (!_rb) _rb = GetComponent<Rigidbody>();
+        Transform probe = _sliding ? groundProbeSlide : groundProbeStand;
 
-        Collider col = GetComponent<Collider>();
-        Bounds b = col.bounds;
+        if (!probe)
+        {
+            Debug.LogWarning("Ground probe missing!");
+            return false;
+        }
 
-        float skin = Mathf.Max(0.02f, b.size.y * 0.02f);
+        Vector3 origin = probe.position;
 
-        float checkDistance = Mathf.Clamp(b.size.y * 0.1f, 0.05f, 0.25f);
-
-        Vector3 halfExtents = new Vector3(
-            b.extents.x * 0.9f,
-            skin,
-            b.extents.z * 0.9f
-        );
-
-        Vector3 boxCenter = b.center + Vector3.down * (b.extents.y - halfExtents.y);
-
-        bool grounded = Physics.BoxCast(
-            boxCenter,
-            halfExtents,
+        return Physics.SphereCast(
+            origin,
+            groundRadius,
             Vector3.down,
-            Quaternion.identity,
-            checkDistance,
+            out _,
+            groundCheckDistance,
             groundLayer,
             QueryTriggerInteraction.Ignore
         );
-
-        if (grounded) _jumping = false;
-        return grounded;
     }
+
     void Slide()
     {
 

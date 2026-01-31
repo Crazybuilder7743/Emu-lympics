@@ -490,6 +490,10 @@ MonoBehaviour:
     m_Bits: 136
   groundIgnoreAfterJump: 0.12
   _activeGravityMultiplier: 0
+  groundProbeStand: {fileID: 1607329416}
+  groundProbeSlide: {fileID: 0}
+  groundRadius: 0.18
+  groundCheckDistance: 0.12
 --- !u!136 &1607329413
 CapsuleCollider:
   m_ObjectHideFlags: 0
