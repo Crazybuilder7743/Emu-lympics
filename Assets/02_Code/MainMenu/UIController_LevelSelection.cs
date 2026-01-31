@@ -125,6 +125,7 @@ public class UIController_LevelSelection : MonoBehaviour
 
     private void OnLevelClicked(LevelInfo level)
     {
+        LevelInfo.currentLevel = level;
         SceneManager.LoadScene(level.sceneToLoad);
     }
 }

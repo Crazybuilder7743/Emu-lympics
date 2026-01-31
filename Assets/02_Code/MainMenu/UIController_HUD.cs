@@ -38,6 +38,7 @@ public class UIController_HUD : MonoBehaviour
         _p1Mask2 = _p1MaskContainer.Q<VisualElement>("P1Mask2");
         _p1Mask3 = _p1MaskContainer.Q<VisualElement>("P1Mask3");
 
+
         _p2MaskContainer = _root.Q<VisualElement>("P2MaskContainer");
 
 

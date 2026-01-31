@@ -12,6 +12,7 @@ public class InitLevel : MonoBehaviour
     [SerializeField] RenderTexture player2Screen;
     (Level level, PlayerSplitScreenInfo player) player2 = new();
     [SerializeField] PlayerSplitScreenInfo playerPrefab;
+
     private void InitGame() 
     {
         SetUpPlayer(ref player1,false);

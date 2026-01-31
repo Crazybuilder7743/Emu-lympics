@@ -12,4 +12,6 @@ public class LevelInfo
     public HeadMask mask3;
 
     public SceneField sceneToLoad;
+
+    public static LevelInfo currentLevel;
 }
