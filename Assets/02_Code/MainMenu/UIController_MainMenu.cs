@@ -1,5 +1,6 @@
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
@@ -10,6 +11,8 @@ public class UIController_MainMenu : MonoBehaviour
 
     private VisualElement _createLobbyButton;
     private VisualElement _exitButton;
+
+    [SerializeField] private SceneField _levelSelectionScene;
 
 
 
@@ -31,10 +34,10 @@ public class UIController_MainMenu : MonoBehaviour
 
     private void RegisterCallbacks()
     {
-        _createLobbyButton = _root.Q<VisualElement>("CreateLobby");
+        _createLobbyButton = _root.Q<VisualElement>("LevelsButton");
         _createLobbyButton.RegisterCallback<ClickEvent>(OnLevelsClicked);
 
-        _exitButton = _root.Q<VisualElement>("Exit");
+        _exitButton = _root.Q<VisualElement>("ExitButton");
         _exitButton.RegisterCallback<ClickEvent>(OnExitButtonClicked);
     }
     private void OnExitButtonClicked(ClickEvent eventArgs)
@@ -50,7 +53,7 @@ public class UIController_MainMenu : MonoBehaviour
 
     private void OnLevelsClicked(ClickEvent eventArgs)
     {
-  
+        SceneManager.LoadScene(_levelSelectionScene);
 
     }
 

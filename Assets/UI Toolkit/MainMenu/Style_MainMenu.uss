@@ -28,8 +28,9 @@
     padding-bottom: 0;
     padding-left: 0;
     -unity-text-align: middle-center;
-    -unity-font-definition: url("project://database/Assets/06_Ressources/Moogalator-yYJr3.ttf?fileID=12800000&guid=d9c837c3ab01b8a4c95392a1a3a5065e&type=3#Moogalator-yYJr3");
-    font-size: 30px;
+    -unity-font-definition: url("project://database/Assets/06_Ressources/Sacloud-R9g4M.otf?fileID=12800000&guid=b857b7333b28d874a915b022921bfb64&type=3#Sacloud-R9g4M");
+    font-size: 50px;
+    top: 3px;
 }
 
 .button:hover {
