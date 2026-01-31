@@ -4,7 +4,7 @@ using UnityEngine;
 public abstract class Mask
 {
 
-    public abstract void Activate();
-    public abstract void Deactivate();
+    public abstract void Activate(Player player);
+    public abstract void Deactivate(Player player);
     public abstract int GetID();
 }

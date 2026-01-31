@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PlayerMaskManager
 {
+    private Player owner;
     public static float switchCooldown = 1f;
     public float CurrentMaskChangeCooldown => Mathf.Clamp(Time.time - lastMaskChange, 0, switchCooldown) / switchCooldown;
     private float lastMaskChange = float.MinValue;
@@ -11,6 +12,8 @@ public class PlayerMaskManager
     public event OnMaskChange maskChange;
     public int currentID = 0;
     public Mask CurrentMask => masks[currentID];
+
+    public PlayerMaskManager(Player owner) {  this.owner = owner; }
     public void Init(IEnumerable<int> maskIDs)
     {
         foreach (int maskID in maskIDs)
@@ -29,10 +32,10 @@ public class PlayerMaskManager
             return CurrentMask;
         }
         lastMaskChange = Time.time;
-        CurrentMask.Deactivate();
+        CurrentMask.Deactivate(owner);
         currentID = maskID;
         maskChange?.Invoke(currentID);
-        CurrentMask.Activate();
+        CurrentMask.Activate(owner);
 
         return CurrentMask;
     }

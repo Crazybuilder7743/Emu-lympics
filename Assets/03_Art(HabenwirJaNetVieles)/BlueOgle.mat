@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: oGLE
+  m_Name: BlueOgle
   m_Shader: {fileID: -6465566751694194690, guid: 00b8e6941245a714481e129c60e9f9eb, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -46,8 +46,8 @@ Material:
     - _QueueOffset: 0
     - _Secret: 0
     m_Colors:
-    - _BaseColor: {r: 0.8773585, g: 0.20278567, b: 0.20278567, a: 1}
-    - _BrandNameColor: {r: 1, g: 0, b: 0, a: 1}
+    - _BaseColor: {r: 0.20392157, g: 0.62489295, b: 0.8784314, a: 1}
+    - _BrandNameColor: {r: 0, g: 0.016898155, b: 1, a: 1}
     - _SecretColor: {r: 7.639378, g: 16, b: 1.283019, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
