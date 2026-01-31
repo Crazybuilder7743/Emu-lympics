@@ -13,7 +13,7 @@ public static class AllMasks
         }
         set {  masks = value; }
     }
-    private static Dictionary<int,Mask> masks;
+    private static Dictionary<int,Mask> masks = new();
 
     private static void Init() 
     {

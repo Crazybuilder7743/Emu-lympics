@@ -12,7 +12,6 @@
     top: 938px;
     left: 42px;
     flex-direction: row;
-    background-color: rgb(90, 253, 56);
 }
 
 .mask {
