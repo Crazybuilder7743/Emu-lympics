@@ -72,6 +72,9 @@ public class UIController_HUD : MonoBehaviour
         _currentDebugLevel = LevelInfo.currentLevel;
         InitLevel.player1obj.maskmanager.maskChange += OnP1MaskChanged;
 
+        _p1Healthbar.highValue = InitLevel.player1obj.healthSystem.maxHealth;
+        _p2Healthbar.highValue = InitLevel.player2obj.healthSystem.maxHealth;
+
         TestMyUI();
         _isUIInitialized = true;
     }
@@ -137,12 +140,15 @@ public class UIController_HUD : MonoBehaviour
         {
             case 0:
                 _isP1Mask1OnCD = true;
+                InitLevel.player1obj.colorCoordinater.ChangeMaskColor(LevelInfo.currentLevel.mask1);
                 break;
             case 1:
                 _isP1Mask2OnCD = true;
+                InitLevel.player1obj.colorCoordinater.ChangeMaskColor(LevelInfo.currentLevel.mask2);
                 break;
             case 2:
                 _isP1Mask3OnCD = true;
+                InitLevel.player1obj.colorCoordinater.ChangeMaskColor(LevelInfo.currentLevel.mask3);
                 break;
         }
 
@@ -168,11 +174,11 @@ public class UIController_HUD : MonoBehaviour
 
         _p1HealthbarContainer = _root.Q<VisualElement>("P1HealthbarContainer");
         _p1Healthbar = _p1HealthbarContainer.Q<ProgressBar>("Healthbar");
-        _p1Healthbar.highValue = InitLevel.player1obj.healthSystem.maxHealth;
+
 
         _p2HealthbarContainer = _root.Q<VisualElement>("P2HealthbarContainer");
         _p2Healthbar = _p2HealthbarContainer.Q<ProgressBar>("Healthbar");
-        _p2Healthbar.highValue = InitLevel.player2obj.healthSystem.maxHealth;
+
 
 
         _p2MaskContainer = _root.Q<VisualElement>("P2MaskContainer");

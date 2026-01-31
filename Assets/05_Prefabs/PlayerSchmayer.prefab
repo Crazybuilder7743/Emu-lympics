@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 818720100457507098}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -12}
+  m_LocalPosition: {x: 0, y: 1, z: -7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -194,6 +194,7 @@ GameObject:
   - component: {fileID: 6466871939811119706}
   - component: {fileID: 5943703891218863360}
   - component: {fileID: 4773995589225866050}
+  - component: {fileID: 3511008283799053891}
   m_Layer: 0
   m_Name: PlayerSchmayer
   m_TagString: Untagged
@@ -244,6 +245,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   playerSplitScreenInfo: {fileID: 5943703891218863360}
+  maskRenderer: {fileID: 1474599632141627488}
+  colorCoordinater: {fileID: 3511008283799053891}
+--- !u!114 &3511008283799053891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9218201412825862784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5e0acbb59f241c4d85bde84c243ade9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColorCoordinater
+  _maskRenderer: {fileID: 1474599632141627488}
 --- !u!1001 &5863092832098921462
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -387,6 +403,11 @@ CapsuleCollider:
   m_Height: 0.45
   m_Direction: 1
   m_Center: {x: 0, y: 0.84, z: 0.36}
+--- !u!23 &1474599632141627488 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4984138232000945046, guid: 80521d76e5ec7994e9647fbf75582802, type: 3}
+  m_PrefabInstance: {fileID: 5863092832098921462}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5738210270735856490 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2233737084576749724, guid: 80521d76e5ec7994e9647fbf75582802, type: 3}
