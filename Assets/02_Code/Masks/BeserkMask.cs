@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BeserkMask : Mask
 {
-    private static int ID = 2;
+    public static int ID = 2;
     private const float DEFAULT_DAMAGE_MOD = 1f;
     private const float DEFAULT_SPEED_MOD = 1f;
     public float damageModifier = 2;

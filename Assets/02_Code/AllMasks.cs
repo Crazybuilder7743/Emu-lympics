@@ -19,5 +19,8 @@ public static class AllMasks
     {
         initzialed = true;
         masks.Add(GravitationMask.ID,new GravitationMask());
+        masks.Add(GasMask.ID,new GasMask());
+        masks.Add(TurtleMask.ID,new TurtleMask());
+        masks.Add(BeserkMask.ID,new BeserkMask());
     }
 }
