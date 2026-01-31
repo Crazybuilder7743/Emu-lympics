@@ -19,6 +19,11 @@
             <ui:VisualElement name="P1HealthbarContainer" class="healthBarContainer">
                 <ui:ProgressBar value="22" name="Healthbar" class="healthBar"/>
             </ui:VisualElement>
+            <ui:VisualElement name="P1SpeedometerContainer" class="speedometerContainer" style="top: 848px; left: 705px;">
+                <ui:VisualElement name="Speedometer" class="speedometer" style="rotate: 0;">
+                    <ui:VisualElement class="speedometerDing"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="Right" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/03_Art(HabenwirJaNetVieles)/RenderTextures/SplitScreen2.renderTexture?fileID=8400000&amp;guid=86ec3758d3e77d34684cc694a76453e1&amp;type=2#SplitScreen2&quot;); background-color: rgb(231, 95, 95); border-left-color: rgb(0, 0, 0); border-left-width: 5px; width: 50%; min-width: 50%; max-width: 50%; align-items: center;">
             <ui:VisualElement name="P2MaskContainer" class="maskContainer">
@@ -37,6 +42,11 @@
             </ui:VisualElement>
             <ui:VisualElement name="P2HealthbarContainer" class="healthBarContainer" style="flex-grow: 1;">
                 <ui:ProgressBar value="22" name="Healthbar" class="healthBar"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="P1SpeedometerContainer" class="speedometerContainer">
+                <ui:VisualElement name="Speedometer" class="speedometer">
+                    <ui:VisualElement class="speedometerDing"/>
+                </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>

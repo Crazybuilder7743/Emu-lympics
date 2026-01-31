@@ -106,3 +106,39 @@
     max-height: 35px;
     top: 25px;
 }
+
+.speedometerContainer {
+    position: absolute;
+    width: 200px;
+    min-width: 200px;
+    max-width: 200px;
+    height: 200px;
+    min-height: 200px;
+    max-height: 200px;
+    top: 848px;
+    left: 705px;
+    background-color: rgb(164, 83, 83);
+    justify-content: flex-end;
+}
+
+.speedometer {
+    width: 200px;
+    min-width: 200px;
+    max-width: 200px;
+    height: 10px;
+    min-height: 10px;
+    max-height: 10px;
+    transform-origin: center;
+    rotate: 0;
+}
+
+.speedometerDing {
+    flex-grow: 1;
+    width: 30px;
+    min-width: 30px;
+    max-width: 30px;
+    height: 10px;
+    min-height: 10px;
+    max-height: 10px;
+    background-color: rgb(0, 0, 0);
+}
