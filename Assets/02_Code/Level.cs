@@ -5,7 +5,7 @@ using UnityEngine.Splines;
 [RequireComponent(typeof(SplineContainer))]
 public class Level : MonoBehaviour
 {
-    private SplineContainer splineContainer;
+    public SplineContainer splineContainer;
     public Spline playerRunRail => splineContainer[0];
     public void Awake()
     {

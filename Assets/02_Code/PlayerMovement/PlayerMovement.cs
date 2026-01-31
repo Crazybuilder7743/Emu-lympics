@@ -17,8 +17,9 @@ public class PlayerMovement : MonoBehaviour
     Vector3 _moveDirection;
     private const float _gravity = -9.81f;
 
-    void Awake()
+    public void Init(bool player1)
     {
+        _pIndex = player1? PlayerIndex.Player1 : PlayerIndex.Player2;
         _rb = GetComponent<Rigidbody>();
         _activeGravityMultiplier = 2f;
         _activeSpeed = 1f;
