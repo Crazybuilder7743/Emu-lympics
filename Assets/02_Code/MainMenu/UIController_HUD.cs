@@ -20,6 +20,12 @@ public class UIController_HUD : MonoBehaviour
     private VisualElement _p1Mask3;
     private VisualElement _p1CDMask3;
 
+    private VisualElement _p1HealthbarContainer;
+    private ProgressBar _p1Healthbar;
+
+    private VisualElement _p2HealthbarContainer;
+    private ProgressBar _p2Healthbar;
+
     private VisualElement _p2MaskContainer;
     private VisualElement _p2Mask1;
     private VisualElement _p2CDMask1;
@@ -32,15 +38,17 @@ public class UIController_HUD : MonoBehaviour
 
     private static int MASK_HEIGHT = 229;
 
-    private bool _hasP1SwitchedMaskRecently;
-    private bool _isP1Mask1OnCD;
-    private bool _isP1Mask2OnCD;
-    private bool _isP1Mask3OnCD;
+    private bool _hasP1SwitchedMaskRecently = false;
+    private bool _isP1Mask1OnCD = false;
+    private bool _isP1Mask2OnCD = false;
+    private bool _isP1Mask3OnCD = false;
 
     private float _p1CD = 1;
     private float _p1PercentCD = 0;
     private float _currentP1CD = 0;
     private int _p1CurrentPixelValue = 0;
+
+    private bool _isUIInitialized = false;
 
 
     private void Awake()
@@ -64,6 +72,8 @@ public class UIController_HUD : MonoBehaviour
         _currentDebugLevel = LevelInfo.currentLevel;
         InitLevel.player1obj.maskmanager.maskChange += OnP1MaskChanged;
 
+        TestMyUI();
+        _isUIInitialized = true;
     }
 
     private void Update()
@@ -82,13 +92,13 @@ public class UIController_HUD : MonoBehaviour
 
             if (_isP1Mask1OnCD)
             {
-                _p1CDMask1.style.height = _p1CurrentPixelValue;
+                _p1CDMask2.style.height = _p1CurrentPixelValue;
                 _p1CDMask3.style.height = _p1CurrentPixelValue;
             }
 
             if (_isP1Mask2OnCD)
             {
-                _p1CDMask2.style.height = _p1CurrentPixelValue;
+                _p1CDMask1.style.height = _p1CurrentPixelValue;
                 _p1CDMask3.style.height = _p1CurrentPixelValue;
             }
 
@@ -96,11 +106,11 @@ public class UIController_HUD : MonoBehaviour
             {
 
                 _p1CDMask1.style.height = _p1CurrentPixelValue;
-                _p1CDMask1.style.height = _p1CurrentPixelValue;
+                _p1CDMask2.style.height = _p1CurrentPixelValue;
             }
 
 
-            if (_p1CurrentPixelValue <= 0)
+            if (_p1CurrentPixelValue >= MASK_HEIGHT)
             {
                 _isP1Mask1OnCD = false;
                 _isP1Mask2OnCD = false;
@@ -109,15 +119,21 @@ public class UIController_HUD : MonoBehaviour
             }
 
 
-            
+
         }
+
+
+        if (_isUIInitialized)
+        {
+            UpdateHealthbars();
+        }
+
     }
 
     private void OnP1MaskChanged(int index)
     {
-        _hasP1SwitchedMaskRecently = true;
 
-        switch(index)
+        switch (index)
         {
             case 0:
                 _isP1Mask1OnCD = true;
@@ -129,6 +145,8 @@ public class UIController_HUD : MonoBehaviour
                 _isP1Mask3OnCD = true;
                 break;
         }
+
+        _hasP1SwitchedMaskRecently = true;
     }
 
     private void RegisterCallbacks()
@@ -148,6 +166,15 @@ public class UIController_HUD : MonoBehaviour
         _p1CDMask3.style.unityBackgroundImageTintColor = LevelInfo.currentLevel.mask3.maskColor;
 
 
+        _p1HealthbarContainer = _root.Q<VisualElement>("P1HealthbarContainer");
+        _p1Healthbar = _p1HealthbarContainer.Q<ProgressBar>("Healthbar");
+        _p1Healthbar.highValue = InitLevel.player1obj.healthSystem.maxHealth;
+
+        _p2HealthbarContainer = _root.Q<VisualElement>("P2HealthbarContainer");
+        _p2Healthbar = _p2HealthbarContainer.Q<ProgressBar>("Healthbar");
+        _p2Healthbar.highValue = InitLevel.player2obj.healthSystem.maxHealth;
+
+
         _p2MaskContainer = _root.Q<VisualElement>("P2MaskContainer");
 
         _p2Mask1 = _p2MaskContainer.Q<VisualElement>("P2Mask1");
@@ -162,19 +189,29 @@ public class UIController_HUD : MonoBehaviour
         _p2CDMask3 = _p2Mask3.Q<VisualElement>("CooldownMask");
         _p2CDMask3.style.unityBackgroundImageTintColor = LevelInfo.currentLevel.mask3.maskColor;
 
-        
+
 
     }
 
+    private void UpdateHealthbars()
+    {
+        _p1Healthbar.value = InitLevel.player1obj.healthSystem.currentHealth;
+        _p2Healthbar.value = InitLevel.player2obj.healthSystem.currentHealth;
+    }
 
-    //private async void TestMyUI()
-    //{
-    //    await Task.Delay(10000);
-    //    OnP1MaskChanged(0);
-    //    await Task.Delay(5000);
-    //    OnP1MaskChanged(1);
-    //    await Task.Delay(5000);
-    //    OnP1MaskChanged(2);
-    //}
+
+
+    private async void TestMyUI()
+    {
+        await Task.Delay(5000);
+        InitLevel.player1obj.maskmanager.ChangeMask(1);
+        Debug.Log("Change Mask to 1");
+        await Task.Delay(3000);
+        InitLevel.player1obj.maskmanager.ChangeMask(2);
+        Debug.Log("Change Mask to 2");
+        await Task.Delay(3000);
+        InitLevel.player1obj.maskmanager.ChangeMask(0);
+        Debug.Log("Change Mask to 0");
+    }
 
 }
