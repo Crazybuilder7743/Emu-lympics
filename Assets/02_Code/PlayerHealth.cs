@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour
+public class PlayerHealth
 {
     public float maxHealth = 100;
     public float currentHealth;
@@ -10,10 +10,6 @@ public class PlayerHealth : MonoBehaviour
     public OnTakeDamage onTakeDamage;
     public delegate void OnDeath();
     public OnDeath onDeath;
-    void Start()
-    {   
-        currentHealth = maxHealth;   
-    }
 
     public void TakeDamage(float damage) 
     {
@@ -29,7 +25,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    void Update()
+    public void RegenHealthTick()
     {
         currentHealth = currentHealth+ (baseHealthRegen* healthRegenModifier*Time.deltaTime)>= maxHealth?maxHealth: currentHealth + (baseHealthRegen * healthRegenModifier *Time.deltaTime);
     }

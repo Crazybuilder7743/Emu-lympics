@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMaskManager : MonoBehaviour
+public class PlayerMaskManager
 {
     public static float switchCooldown = 1f;
     public float CurrentMaskChangeCooldown => Mathf.Clamp(Time.time - lastMaskChange,0,switchCooldown)/switchCooldown;
