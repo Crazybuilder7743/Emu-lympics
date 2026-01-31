@@ -195,6 +195,7 @@ GameObject:
   - component: {fileID: 5943703891218863360}
   - component: {fileID: 4773995589225866050}
   - component: {fileID: 3511008283799053891}
+  - component: {fileID: 5549350797562918658}
   m_Layer: 0
   m_Name: PlayerSchmayer
   m_TagString: Untagged
@@ -260,6 +261,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColorCoordinater
   _maskRenderer: {fileID: 1474599632141627488}
+--- !u!114 &5549350797562918658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9218201412825862784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29a074d529cf945029ef7cf40540c9df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Splines::UnityEngine.Splines.SplineAnimate
+  m_Target: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_LoopMode: 1
+  m_Method: 0
+  m_Duration: 1
+  m_MaxSpeed: 10
+  m_EasingMode: 0
+  m_AlignmentMode: 1
+  m_ObjectForwardAxis: 2
+  m_ObjectUpAxis: 1
+  m_StartOffset: 0
 --- !u!1001 &5863092832098921462
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -328,6 +352,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5980524666089631260, guid: 80521d76e5ec7994e9647fbf75582802, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5825256990816513323}
+    - targetCorrespondingSourceObject: {fileID: 5980524666089631260, guid: 80521d76e5ec7994e9647fbf75582802, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8201386870123214585}
+    - targetCorrespondingSourceObject: {fileID: 5980524666089631260, guid: 80521d76e5ec7994e9647fbf75582802, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5894199854179935291}
   m_SourcePrefab: {fileID: 100100000, guid: 80521d76e5ec7994e9647fbf75582802, type: 3}
 --- !u!1 &262040707158427114 stripped
 GameObject:
@@ -403,6 +433,52 @@ CapsuleCollider:
   m_Height: 0.45
   m_Direction: 1
   m_Center: {x: 0, y: 0.84, z: 0.36}
+--- !u!114 &8201386870123214585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262040707158427114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 366728e6c58b09e4db0d82bc32592550, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  _pIndex: 1
+  _jumpForce: 10
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  groundIgnoreAfterJump: 0.12
+  _activeGravityMultiplier: 0
+--- !u!54 &5894199854179935291
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262040707158427114}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!23 &1474599632141627488 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 4984138232000945046, guid: 80521d76e5ec7994e9647fbf75582802, type: 3}
