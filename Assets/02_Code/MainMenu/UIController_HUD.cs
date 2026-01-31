@@ -97,12 +97,12 @@ public class UIController_HUD : MonoBehaviour
             //_p1CDMask1.style.display = DisplayStyle.Flex;
 
             _currentP1CD = InitLevel.player1obj.maskmanager.CurrentMaskChangeCooldown;
-            Debug.Log("currentP1Cooldown = " + _currentP1CD);
-            Debug.Log("P1Cooldown = " + _p1CD);
+            //Debug.Log("currentP1Cooldown = " + _currentP1CD);
+            //Debug.Log("P1Cooldown = " + _p1CD);
             _p1PercentCD = 1 - (_currentP1CD / _p1CD);
-            Debug.Log("cooldownPercent = " + _p1PercentCD);
+            //Debug.Log("cooldownPercent = " + _p1PercentCD);
             _p1CurrentPixelValue = MASK_HEIGHT - (Mathf.FloorToInt(_p1PercentCD * MASK_HEIGHT));
-            Debug.Log("currentPixelValue = " + _p1CurrentPixelValue);
+            //Debug.Log("currentPixelValue = " + _p1CurrentPixelValue);
 
             if (_isP1Mask1OnCD)
             {

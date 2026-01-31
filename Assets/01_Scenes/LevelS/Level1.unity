@@ -364,17 +364,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level1
       objectReference: {fileID: 0}
+    - target: {fileID: 5598140223411832235, guid: 578bd628dc6f17c41aa2c431afca6c41, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6520889722711575689, guid: 578bd628dc6f17c41aa2c431afca6c41, type: 3}
+      propertyPath: m_Splines.Array.data[0].m_Knots.Array.data[1].Position.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8033229715728690184, guid: 578bd628dc6f17c41aa2c431afca6c41, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8033229715728690184, guid: 578bd628dc6f17c41aa2c431afca6c41, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8033229715728690184, guid: 578bd628dc6f17c41aa2c431afca6c41, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.21
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8033229715728690184, guid: 578bd628dc6f17c41aa2c431afca6c41, type: 3}
       propertyPath: m_LocalRotation.w

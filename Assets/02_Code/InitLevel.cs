@@ -25,6 +25,8 @@ public class InitLevel : MonoBehaviour
         maskIDS.Add(LevelInfo.currentLevel.mask1.maskID);
         maskIDS.Add(LevelInfo.currentLevel.mask2.maskID);
         maskIDS.Add(LevelInfo.currentLevel.mask3.maskID);
+        player1.player.maskmanager = new(player1.player) ;
+        player2.player.maskmanager = new(player2.player) ;
         player1.player.maskmanager.Init(maskIDS) ;
         player2.player.maskmanager.Init(maskIDS) ;
         player1.player.movement.Init(true);
@@ -45,8 +47,8 @@ public class InitLevel : MonoBehaviour
         player.player = Instantiate(playerPrefab);
         player.player.splineAnimator.Container = player.level.splineContainer;
         player.player.speedController.Init();
-        //player.player.transform = player.level.transform;
-        //player.player.transform.position = player.level.playerRunRail[0].Position +  new float3(0,player.level.transform.position.y,0);
+        
+        player.player.transform.position = player.level.playerRunRail[0].Position + new float3(0, player.level.transform.position.y, 0);
         //player.player.transform.rotation = player.level.playerRunRail[0].Rotation;
 
         Material emuMat = new Material(player.player.maskRenderer.material);
