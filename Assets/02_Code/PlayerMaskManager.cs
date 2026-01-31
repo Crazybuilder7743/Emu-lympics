@@ -4,7 +4,8 @@ using UnityEngine;
 public class PlayerMaskManager : MonoBehaviour
 {
     public static float switchCooldown = 1f;
-    private static float lastMaskChange = float.MinValue;
+    public float CurrentMaskChangeCooldown => Mathf.Clamp(Time.time - lastMaskChange,0,switchCooldown)/switchCooldown;
+    private float lastMaskChange = float.MinValue;
     List<Mask> masks = new List<Mask>();
     public delegate void OnMaskChange(Mask mask);
     public event OnMaskChange maskChange;
