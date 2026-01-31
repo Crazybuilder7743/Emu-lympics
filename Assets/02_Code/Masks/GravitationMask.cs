@@ -6,11 +6,11 @@ public class GravitationMask : Mask
     private static bool flippedGravity = false;
     public static int ID = 0;
     public float effectDuration;
-    public override void Activate()
+    public override void Activate(Player player)
     {
         //TODO : Implement gravitation switch and rotate player
     }
-    public override void Deactivate()
+    public override void Deactivate(Player player)
     {
         //RestoreNormalGravity
     }

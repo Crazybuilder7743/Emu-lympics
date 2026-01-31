@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerHealth
 {
+    public float damageMod = 1f;
     public float maxHealth = 100;
     public float currentHealth;
     public float baseHealthRegen = 0.1f;
@@ -14,7 +15,7 @@ public class PlayerHealth
     public void TakeDamage(float damage) 
     {
         float tmp = currentHealth;
-        currentHealth -= damage;
+        currentHealth -= damage*damageMod;
         currentHealth = currentHealth < 0? 0: currentHealth;
         onTakeDamage?.Invoke(tmp,currentHealth);
         if (currentHealth <= 0)
