@@ -41,8 +41,9 @@ public class InitLevel : MonoBehaviour
         int tmpMod = offsetUp ? -1 : 1;
         player.level = Instantiate(levelPrefab,levelOffset*tmpMod, Quaternion.identity);
         player.player = Instantiate(playerPrefab);
-        player.player.transform.position = player.level.playerRunRail[0].Position +  new float3(0,player.level.transform.position.y,0);
-        player.player.transform.rotation = player.level.playerRunRail[0].Rotation;
+        //player.player.transform = player.level.transform;
+        //player.player.transform.position = player.level.playerRunRail[0].Position +  new float3(0,player.level.transform.position.y,0);
+        //player.player.transform.rotation = player.level.playerRunRail[0].Rotation;
 
         Material emuMat = new Material(player.player.maskRenderer.material);
         player.player.maskRenderer.material = emuMat;
