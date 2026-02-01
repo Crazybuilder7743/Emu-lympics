@@ -7,9 +7,10 @@
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="Right" style="flex-grow: 1; width: 80%; min-width: 80%; max-width: 80%;">
-            <ui:VisualElement name="SelectionContainer" style="width: 1300px; min-width: 1300px; max-width: 1300px; height: 1000px; min-height: 1000px; max-height: 1000px; align-self: center; background-color: rgba(202, 106, 106, 0.52); justify-content: space-around; top: 40px;">
+            <ui:VisualElement name="SelectionContainer" style="width: 1400px; min-width: 1400px; max-width: 1400px; height: 1000px; min-height: 1000px; max-height: 1000px; align-self: center; background-color: rgba(202, 106, 106, 0); justify-content: space-around; top: 40px; left: 51px;">
                 <ui:ScrollView horizontal-scroller-visibility="Hidden" name="LevelList" vertical-scroller-visibility="Hidden"/>
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
+    <ui:Label text="Emu-lympic&#10;run" style="position: absolute; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; font-size: 79px; -unity-font-definition: url(&quot;project://database/Assets/06_Ressources/Sacloud-R9g4M.otf?fileID=12800000&amp;guid=b857b7333b28d874a915b022921bfb64&amp;type=3#Sacloud-R9g4M&quot;); -unity-text-align: middle-center; top: 274px; left: -10px; color: rgb(255, 255, 255); rotate: 14deg;"/>
 </ui:UXML>
