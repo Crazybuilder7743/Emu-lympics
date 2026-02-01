@@ -4,7 +4,9 @@
         <ui:Label text="levelName" name="LevelName" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: middle-center; width: 300px; min-width: 300px; max-width: 300px; height: 50px; min-height: 50px; max-height: 50px; -unity-font-definition: url(&quot;project://database/Assets/06_Ressources/Sacloud-R9g4M.otf?fileID=12800000&amp;guid=b857b7333b28d874a915b022921bfb64&amp;type=3#Sacloud-R9g4M&quot;); font-size: 45px; -unity-font-style: bold;"/>
         <ui:VisualElement style="flex-grow: 1; width: 300px; min-width: 300px; max-width: 300px; max-height: 300px; min-height: 300px; height: 300px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; background-color: rgb(38, 217, 164);"/>
         <ui:VisualElement style="flex-grow: 1; width: 300px; min-width: 300px; height: 50px; min-height: 50px; max-height: 50px; max-width: 300px; flex-direction: row;">
-            <ui:VisualElement name="Mask1" class="maskSlot"/>
+            <ui:VisualElement name="Mask1" class="maskSlot">
+                <ui:VisualElement style="width: 530px; min-width: 530px; max-width: 530px; height: 229px; min-height: 229px; max-height: 229px;"/>
+            </ui:VisualElement>
             <ui:VisualElement name="Mask2" class="maskSlot"/>
             <ui:VisualElement name="Mask3" class="maskSlot"/>
         </ui:VisualElement>
