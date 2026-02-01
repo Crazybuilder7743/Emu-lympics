@@ -21,6 +21,5 @@ public static class AllMasks
         masks.Add(GasMask.ID,new GasMask());
         masks.Add(TurtleMask.ID,new TurtleMask());
         masks.Add(BeserkMask.ID,new BeserkMask());
-        masks.Add(SupermanMask.ID,new SupermanMask());
     }
 }
