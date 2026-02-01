@@ -9,13 +9,13 @@ public class Player : MonoBehaviour
     public PlayerSplitScreenInfo playerSplitScreenInfo;
     public Renderer maskRenderer;
     public ColorCoordinater colorCoordinater;
-    //public VisualEffect laserVFX;
+    public VisualEffect laserVFX;
     public SplineAnimate splineAnimator;
     public PlayerMovement movement;
     public SplineSpeedController speedController;
     public void Awake()
     {
-        //laserVFX.gameObject?.SetActive(false);
+        laserVFX.gameObject?.SetActive(false);
     }
     public void Update()
     {
