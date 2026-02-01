@@ -81,6 +81,9 @@ public class SplineSpeedController : MonoBehaviour
         _currentSpeed = _startSpeed;
         ApplySpeedImmediate(_currentSpeed);
 
+        _lastCheckpointT = 0;
+        _hasCheckpoint = false;
+
         _animate.Restart(playAfter); // puts object at beginning 
         if (!playAfter) _animate.Pause(); // ensure it stays there
     }

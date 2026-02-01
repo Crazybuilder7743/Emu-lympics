@@ -15,24 +15,24 @@ MonoBehaviour:
   levels:
   - levelID: 0
     levelName: Level 1
-    mask1: {fileID: 11400000, guid: d6194e3f437ba584e8246c62de122db3, type: 2}
-    mask2: {fileID: 11400000, guid: 87b2570d377ffb0448eb2bd807dd56f3, type: 2}
+    mask1: {fileID: 11400000, guid: 87b2570d377ffb0448eb2bd807dd56f3, type: 2}
+    mask2: {fileID: 11400000, guid: 0e4aaacb52cb66d48926113998409821, type: 2}
     mask3: {fileID: 11400000, guid: bd730421f0d669540b3f0235fd31b5ad, type: 2}
     sceneToLoad:
       m_SceneAsset: {fileID: 102900000, guid: 69993fdf37e5386409ea91d825130f1f, type: 3}
       m_SceneName: Level1
   - levelID: 1
-    levelName: Sunset
-    mask1: {fileID: 11400000, guid: 0e4aaacb52cb66d48926113998409821, type: 2}
-    mask2: {fileID: 11400000, guid: d6194e3f437ba584e8246c62de122db3, type: 2}
-    mask3: {fileID: 11400000, guid: 87b2570d377ffb0448eb2bd807dd56f3, type: 2}
+    levelName: Level 2
+    mask1: {fileID: 11400000, guid: 87b2570d377ffb0448eb2bd807dd56f3, type: 2}
+    mask2: {fileID: 11400000, guid: 0e4aaacb52cb66d48926113998409821, type: 2}
+    mask3: {fileID: 11400000, guid: bd730421f0d669540b3f0235fd31b5ad, type: 2}
     sceneToLoad:
       m_SceneAsset: {fileID: 102900000, guid: 7f65c0121d6cd4d4d87d5981e49914e0, type: 3}
       m_SceneName: Level2
   - levelID: 2
-    levelName: Beach
+    levelName: Level 3
     mask1: {fileID: 11400000, guid: 87b2570d377ffb0448eb2bd807dd56f3, type: 2}
-    mask2: {fileID: 11400000, guid: d6194e3f437ba584e8246c62de122db3, type: 2}
+    mask2: {fileID: 11400000, guid: 0e4aaacb52cb66d48926113998409821, type: 2}
     mask3: {fileID: 11400000, guid: bd730421f0d669540b3f0235fd31b5ad, type: 2}
     sceneToLoad:
       m_SceneAsset: {fileID: 102900000, guid: 140f28a34890c17498a9d93bfc8e4874, type: 3}
