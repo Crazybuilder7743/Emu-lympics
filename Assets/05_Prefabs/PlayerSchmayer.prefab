@@ -449,6 +449,9 @@ MonoBehaviour:
   splineAnimator: {fileID: 5549350797562918658}
   movement: {fileID: 8201386870123214585}
   speedController: {fileID: 4283854901848240673}
+  animator: {fileID: 1412651233563987694}
+  normalSpeedforAnimation: 7
+  started: 0
 --- !u!114 &3511008283799053891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -498,7 +501,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SplineSpeedController
   _animate: {fileID: 5549350797562918658}
+  _startSpeed: 1
   _maxSpeed: 8
+  _currentSpeed: 0
   _acceleration: 20
   _deceleration: 30
   _checkpoints: []
@@ -714,6 +719,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!95 &1412651233563987694 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4811917059270927640, guid: 80521d76e5ec7994e9647fbf75582802, type: 3}
+  m_PrefabInstance: {fileID: 5863092832098921462}
+  m_PrefabAsset: {fileID: 0}
 --- !u!23 &1474599632141627488 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 4984138232000945046, guid: 80521d76e5ec7994e9647fbf75582802, type: 3}

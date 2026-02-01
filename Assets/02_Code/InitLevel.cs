@@ -42,7 +42,8 @@ public class InitLevel : MonoBehaviour
         PlayerInput.Instance.Player1PrevMaskInput += Player1PrevMask;
         PlayerInput.Instance.Player2NextMaskInput += Player2NextMask;
         PlayerInput.Instance.Player2PrevMaskInput += Player2PrevMask;
-        
+        player1.player.animator.speed = 0;
+        player2.player.animator.speed = 0;
         player1obj = player1.player;
         player2obj = player2.player;
 
@@ -131,7 +132,8 @@ public class InitLevel : MonoBehaviour
         player2.player.movement.Init(false);
         player1.player.splineAnimator.Play();
         player2.player.splineAnimator.Play();
-
+        player1.player.started = true;
+        player2.player.started = true;
 
     }
     private void SetUpPlayer(ref (Level level, Player player) player, bool offsetUp) 
