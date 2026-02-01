@@ -34,7 +34,10 @@ public class PlayerHealth
             //is dead
         }
     }
-
+    public void ResetToFullHp() 
+    {
+        currentHealth = maxHealth;
+    }
     public void RegenHealthTick()
     {
         currentHealth = currentHealth+ (baseHealthRegen* healthRegenModifier*Time.deltaTime)>= maxHealth?maxHealth: currentHealth + (baseHealthRegen * healthRegenModifier *Time.deltaTime);
