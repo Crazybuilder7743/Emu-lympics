@@ -11,13 +11,13 @@ public class SplineSpeedController : MonoBehaviour
     [Header("Speed")]
     public float _startSpeed = 1.0f;
     public float _maxSpeed = 8f;
+    public float _currentSpeed;
     [SerializeField] float _acceleration = 20f;   // units/sec^2
     [SerializeField] float _deceleration = 30f;   // units/sec^2
 
     [Header("Checkpoints (normalized 0..1)")]
     [SerializeField] List<float> _checkpoints = new();
 
-    float _currentSpeed;
     float _targetSpeed;
     float _speedMultiplier;
     float _standardSpeedMultiplier = 1f;
