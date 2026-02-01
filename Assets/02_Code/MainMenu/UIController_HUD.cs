@@ -462,7 +462,7 @@ public class UIController_HUD : MonoBehaviour
         _p2Speedometer.style.rotate = new Rotate(new Angle(p2Angle, AngleUnit.Degree));
     }
 
-    public void SetWinText(Player player, bool player1Win)
+    public async void SetWinText(Player player, bool player1Win)
     {
         _winText.style.display = DisplayStyle.Flex;
 
@@ -474,6 +474,9 @@ public class UIController_HUD : MonoBehaviour
         {
             _winText.text = "PLAYER 2 WON THE GAME";
         }
+
+        await Task.Delay(5000);
+        SceneManager.LoadScene(0);
     }
 
 

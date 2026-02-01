@@ -70,7 +70,7 @@
             </ui:VisualElement>
             <ui:VisualElement name="Right" style="flex-grow: 1; width: 70%; min-width: 70%; max-width: 70%; left: -5px;">
                 <ui:Label text="Label" name="MaskName" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 10px; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-font-definition: url(&quot;project://database/Assets/06_Ressources/Sacloud-R9g4M.otf?fileID=12800000&amp;guid=b857b7333b28d874a915b022921bfb64&amp;type=3#Sacloud-R9g4M&quot;); font-size: 40px; -unity-text-align: middle-center; -unity-font-style: bold;"/>
-                <ui:Label text="asdsadasdadsadadasdasdasd" name="MaskDesc" class="maskDesc"/>
+                <ui:Label text="asdsadasdadsadadasdasdasd" name="MaskDesc" class="maskDesc" style="left: -5px;"/>
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement style="flex-grow: 1; width: 590px; min-width: 590px; max-width: 590px; height: 3px; min-height: 3px; max-height: 3px; background-color: rgb(0, 0, 0); margin-bottom: -3px;"/>
@@ -81,7 +81,7 @@
             </ui:VisualElement>
             <ui:VisualElement name="Right" style="flex-grow: 1; width: 70%; min-width: 70%; max-width: 70%; left: -5px;">
                 <ui:Label text="Label" name="MaskName" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 10px; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-font-definition: url(&quot;project://database/Assets/06_Ressources/Sacloud-R9g4M.otf?fileID=12800000&amp;guid=b857b7333b28d874a915b022921bfb64&amp;type=3#Sacloud-R9g4M&quot;); font-size: 40px; -unity-text-align: middle-center; -unity-font-style: bold;"/>
-                <ui:Label text="asdsadasdadsadadasdasdasd" name="MaskDesc" class="maskDesc"/>
+                <ui:Label text="asdsadasdadsadadasdasdasd" name="MaskDesc" class="maskDesc" style="left: -5px;"/>
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement style="flex-grow: 1; width: 590px; min-width: 590px; max-width: 590px; height: 3px; min-height: 3px; max-height: 3px; background-color: rgb(0, 0, 0); margin-bottom: -3px;"/>
@@ -92,7 +92,7 @@
             </ui:VisualElement>
             <ui:VisualElement name="Right" style="flex-grow: 1; width: 70%; min-width: 70%; max-width: 70%; left: -5px;">
                 <ui:Label text="Label" name="MaskName" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 10px; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-font-definition: url(&quot;project://database/Assets/06_Ressources/Sacloud-R9g4M.otf?fileID=12800000&amp;guid=b857b7333b28d874a915b022921bfb64&amp;type=3#Sacloud-R9g4M&quot;); font-size: 40px; -unity-text-align: middle-center; -unity-font-style: bold;"/>
-                <ui:Label text="asdsadasdadsadadasdasdasdsdsdsdsdsdsdsdsdsdsd" name="MaskDesc" class="maskDesc"/>
+                <ui:Label text="asdsadasdadsadadasdasdasdsdsdsdsdsdsdsdsdsdsd" name="MaskDesc" class="maskDesc" style="left: -5px;"/>
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
