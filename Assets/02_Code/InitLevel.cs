@@ -96,26 +96,26 @@ public class InitLevel : MonoBehaviour
 
     private void SwitchToMask2ForPlayer1()
     {
-        player1.player.maskmanager.ChangeMask(0);
+        player1.player.maskmanager.ChangeMask(1);
     }private void SwitchToMask3ForPlayer1()
     {
-        player1.player.maskmanager.ChangeMask(1);
+        player1.player.maskmanager.ChangeMask(2);
     }
 
     private void SwitchToMask1ForPlayer1()
     {
-        player1.player.maskmanager.ChangeMask(2);
+        player1.player.maskmanager.ChangeMask(0);
     }private void SwitchToMask2ForPlayer2()
     {
-        player2.player.maskmanager.ChangeMask(0);
+        player2.player.maskmanager.ChangeMask(1);
     }private void SwitchToMask3ForPlayer2()
     {
-        player2.player.maskmanager.ChangeMask(1);
+        player2.player.maskmanager.ChangeMask(2);
     }
 
     private void SwitchToMask1ForPlayer2()
     {
-        player2.player.maskmanager.ChangeMask(2);
+        player2.player.maskmanager.ChangeMask(0);
     }
 
     public void Start()
