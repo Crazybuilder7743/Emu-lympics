@@ -14,34 +14,20 @@ public class Player : MonoBehaviour
     public PlayerMovement movement;
     public SplineSpeedController speedController;
     public Animator animator;
+    //public GameObject emuHead;
+    //public VisualEffect deathVFX;
     public float normalSpeedforAnimation = 3f;
-    public bool started = false;
     public void Awake()
     {
         laserVFX.gameObject?.SetActive(false);
     }
     public void Update()
     {
-        if (!started)
-        {
-            return;
-        }
         healthSystem.RegenHealthTick();
         EvaluateAnimatorSpeed();
     }
     private void EvaluateAnimatorSpeed()
     {
-        if(speedController._currentSpeed == 0)
-        {
-            animator.speed = 0;// / currentSpeed;
-            return;
-        }
-        else if(speedController._currentSpeed < 1) 
-        {
-            animator.speed = normalSpeedforAnimation / 1;// / currentSpeed;
-            return;
-        }
-        animator.speed = normalSpeedforAnimation / speedController._currentSpeed;// / currentSpeed;
-
+        animator.SetFloat("Speed", speedController._currentSpeed / normalSpeedforAnimation);
     }
 }

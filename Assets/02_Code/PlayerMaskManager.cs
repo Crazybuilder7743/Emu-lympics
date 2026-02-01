@@ -24,7 +24,6 @@ public class PlayerMaskManager
             }
             masks.Add(AllMasks.Masks[maskID]);
         }
-        CurrentMask.Activate(owner);
     }
 
 
