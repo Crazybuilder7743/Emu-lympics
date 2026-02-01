@@ -9,7 +9,6 @@ public class SupermanMask : Mask
     private float timeTillOverChargeSec = 5f;
     private float damagePerS = 2f;
     private bool overcharging;
-    private Player ownPlayer;
     public override void Activate(Player player)
     {
         float overchargeAmount = Time.time - lastUseTime;
@@ -18,23 +17,22 @@ public class SupermanMask : Mask
             lastUseTime = Time.time;
         }
 
-        ownPlayer = player;
         overcharging = true;
-        Overheat();
+        Overheat(player);
     }
 
-    private async void Overheat() 
+    private async void Overheat(Player player) 
     {
-        ownPlayer.laserVFX.gameObject?.SetActive(true);
-        ownPlayer.laserVFX?.Play();
+        player.laserVFX.gameObject?.SetActive(true);
+        player.laserVFX?.Play();
         while (overcharging) 
         {
             float overchargeAmount = Time.time - lastUseTime;
             if (overchargeAmount >= timeTillOverChargeSec) 
             {
-                ownPlayer.healthSystem.TakeDamage(damagePerS * Time.deltaTime);
+                player.healthSystem.TakeDamage(damagePerS * Time.deltaTime);
             }
-            ownPlayer.laserVFX.SetFloat("OverchargeAmount",Mathf.Clamp01( overchargeAmount/timeTillOverChargeSec));
+            player.laserVFX.SetFloat("OverchargeAmount",Mathf.Clamp01( overchargeAmount/timeTillOverChargeSec));
 
             await Task.Delay(INTERGRATION_STEPS_MS);
         }
@@ -44,8 +42,8 @@ public class SupermanMask : Mask
     public override void Deactivate(Player player)
     {
         overcharging = false;
-        ownPlayer.laserVFX.gameObject?.SetActive(false);
-        ownPlayer.laserVFX?.Stop();  
+        player.laserVFX.gameObject?.SetActive(false);
+        player.laserVFX?.Stop();  
     }
 
 
