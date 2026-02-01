@@ -95,6 +95,8 @@ public class UIController_HUD : MonoBehaviour
     private Label _mask3Name;
     private Label _mask3Desc;
 
+    private Label _winText;
+
 
     private bool _isUIInitialized = false;
 
@@ -126,6 +128,8 @@ public class UIController_HUD : MonoBehaviour
         _p2Healthbar.highValue = InitLevel.player2obj.healthSystem.maxHealth;
 
         _maxSpeed = InitLevel.player1obj.speedController._maxSpeed;
+
+        InitLevel.Instance.onWin += SetWinText;
 
         SetMaskInfos();
 
@@ -374,7 +378,7 @@ public class UIController_HUD : MonoBehaviour
 
 
 
-
+        _winText = _root.Q<Label>("WinText");
 
 
     }
@@ -456,6 +460,20 @@ public class UIController_HUD : MonoBehaviour
         _p1Speedometer.style.rotate = new Rotate(new Angle(p1Angle, AngleUnit.Degree));
         //Debug.Log(p1Angle);
         _p2Speedometer.style.rotate = new Rotate(new Angle(p2Angle, AngleUnit.Degree));
+    }
+
+    public void SetWinText(Player player, bool player1Win)
+    {
+        _winText.style.display = DisplayStyle.Flex;
+
+        if(player1Win)
+        {
+            _winText.text = "PLAYER 1 WON THE GAME";
+        }
+        else
+        {
+            _winText.text = "PLAYER 2 WON THE GAME";
+        }
     }
 
 

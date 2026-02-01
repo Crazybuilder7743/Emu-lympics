@@ -156,7 +156,9 @@ public class InitLevel : MonoBehaviour
     public void Win(bool playerOneWon) 
     {
         player1.player.splineAnimator.Pause();
+        Destroy(player1.player.splineAnimator);
         player2.player.splineAnimator.Pause();
+        Destroy(player2.player.splineAnimator);
         player1.player.maskmanager.CurrentMask.Deactivate(player1.player);
         player2.player.maskmanager.CurrentMask.Deactivate(player2.player);
         player1.player.speedController.StopImmediate();
