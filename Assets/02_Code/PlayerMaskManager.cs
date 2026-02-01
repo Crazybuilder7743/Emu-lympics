@@ -26,6 +26,31 @@ public class PlayerMaskManager
         }
         CurrentMask.Activate(owner);
     }
+
+
+    public Mask ChangeMask(bool nextMask) 
+    {
+        if (Time.time - lastMaskChange < switchCooldown)
+        {
+            return CurrentMask;
+        }
+        lastMaskChange = Time.time;
+        CurrentMask.Deactivate(owner);
+        if (nextMask) 
+        {
+            currentID++;
+            currentID = currentID>=masks.Count ? 0 : currentID;
+        }
+        else 
+        {
+            currentID--;
+            currentID = currentID <0? masks.Count-1 : currentID;
+        }
+        maskChange?.Invoke(currentID);
+        CurrentMask.Activate(owner);
+        return CurrentMask;
+    
+    }
     public Mask ChangeMask(int maskID)
     {
         if (Time.time - lastMaskChange < switchCooldown ||maskID ==currentID)

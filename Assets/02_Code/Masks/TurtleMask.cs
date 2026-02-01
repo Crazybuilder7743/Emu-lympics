@@ -10,13 +10,13 @@ public class TurtleMask : Mask
     public override void Activate(Player player)
     {
         player.healthSystem.healthRegenModifier = healthRegenmodifier;
-        //todo: set speed mod
+        player.speedController.AdjustSpeedMultiplier(speedModifier);
     }
 
     public override void Deactivate(Player player)
     {
         player.healthSystem.healthRegenModifier = DEFAULT_REGEN_MOD;
-        //todo: set speed mod
+        player.speedController.ResetSpeedMultiplier();
     }
 
     public override int GetID()
