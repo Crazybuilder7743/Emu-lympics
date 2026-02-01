@@ -323,15 +323,15 @@ public class UIController_HUD : MonoBehaviour
 
     private async void TestMyUI()
     {
-        await Task.Delay(5000);
-        InitLevel.player1obj.maskmanager.ChangeMask(1);
-        Debug.Log("Change P1 Mask to 1");
-        await Task.Delay(3000);
-        InitLevel.player2obj.maskmanager.ChangeMask(2);
-        Debug.Log("Change P2 Mask to 2");
-        await Task.Delay(3000);
-        InitLevel.player1obj.maskmanager.ChangeMask(0);
-        Debug.Log("Change P1 Mask to 0");
+        //await Task.Delay(5000);
+        //InitLevel.player1obj.maskmanager.ChangeMask(1);
+        //Debug.Log("Change P1 Mask to 1");
+        //await Task.Delay(3000);
+        //InitLevel.player2obj.maskmanager.ChangeMask(2);
+        //Debug.Log("Change P2 Mask to 2");
+        //await Task.Delay(3000);
+        //InitLevel.player1obj.maskmanager.ChangeMask(0);
+        //Debug.Log("Change P1 Mask to 0");
     }
 
 }

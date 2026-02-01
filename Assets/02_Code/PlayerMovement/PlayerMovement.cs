@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     float _ignoreGroundUntil;
     bool _jumpRequested;
     [HideInInspector] public float _activeGravityMultiplier;
-    float _activeSpeed;
+    [SerializeField] float _activeSpeed;
     bool _jumping;
     bool _grounded;
     Rigidbody _rb;
@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
         _pIndex = player1? PlayerIndex.Player1 : PlayerIndex.Player2;
         _rb = GetComponent<Rigidbody>();
         _activeGravityMultiplier = 2f;
-        _activeSpeed = 1f;
+        //_activeSpeed = 1f;
         if (_pIndex == PlayerIndex.Player1)
         {
             PlayerInput.Instance.Player1JumpInput += Jump;
