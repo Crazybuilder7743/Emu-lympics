@@ -56,4 +56,10 @@
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
+    <ui:VisualElement name="StartButton" class="startButton" style="display: flex;">
+        <ui:Label text="START" style="-unity-font-definition: url(&quot;project://database/Assets/06_Ressources/Sacloud-R9g4M.otf?fileID=12800000&amp;guid=b857b7333b28d874a915b022921bfb64&amp;type=3#Sacloud-R9g4M&quot;); padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; width: 500px; min-width: 500px; max-width: 500px; height: 200px; min-height: 200px; max-height: 200px; -unity-text-align: middle-center; font-size: 140px; top: 8px; display: flex;"/>
+    </ui:VisualElement>
+    <ui:VisualElement name="CountdownContainer" style="position: absolute; width: 200px; min-width: 200px; max-width: 200px; height: 300px; min-height: 300px; max-height: 300px; left: 50%; translate: -50% 0; top: 133px; background-color: rgb(23, 214, 197); border-left-color: rgba(0, 0, 0, 0.33); border-right-color: rgba(0, 0, 0, 0.33); border-top-color: rgba(0, 0, 0, 0.33); border-bottom-color: rgba(0, 0, 0, 0.33); border-top-width: 5px; border-right-width: 5px; border-bottom-width: 5px; border-left-width: 5px; border-top-left-radius: 50px; border-top-right-radius: 50px; border-bottom-right-radius: 50px; border-bottom-left-radius: 50px; padding-top: 19px; display: none;">
+        <ui:Label text="1" name="Countdown" style="width: 200px; min-width: 200px; max-width: 200px; height: 300px; min-height: 300px; max-height: 300px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-font-definition: url(&quot;project://database/Assets/06_Ressources/Sacloud-R9g4M.otf?fileID=12800000&amp;guid=b857b7333b28d874a915b022921bfb64&amp;type=3#Sacloud-R9g4M&quot;); font-size: 320px; -unity-text-align: middle-center;"/>
+    </ui:VisualElement>
 </ui:UXML>

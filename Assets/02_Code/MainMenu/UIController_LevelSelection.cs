@@ -83,17 +83,17 @@ public class UIController_LevelSelection : MonoBehaviour
 
             if (mask1 != null && level.mask1 != null)
             {
-                mask1.style.backgroundColor = level.mask1.maskColor;
+                mask1.style.unityBackgroundImageTintColor = level.mask1.maskColor;
             }
 
             if (mask2 != null && level.mask2 != null)
             {
-                mask2.style.backgroundColor = level.mask2.maskColor;
+                mask2.style.unityBackgroundImageTintColor = level.mask2.maskColor;
             }
 
             if (mask3 != null && level.mask3 != null)
             {
-                mask3.style.backgroundColor = level.mask3.maskColor;
+                mask3.style.unityBackgroundImageTintColor = level.mask3.maskColor;
             }
 
             if(level.sceneToLoad != null)
