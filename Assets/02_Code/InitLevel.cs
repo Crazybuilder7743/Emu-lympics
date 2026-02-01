@@ -29,13 +29,65 @@ public class InitLevel : MonoBehaviour
         player2.player.maskmanager = new(player2.player) ;
         player1.player.maskmanager.Init(maskIDS) ;
         player2.player.maskmanager.Init(maskIDS) ;
-        player1.player.movement.Init(true);
-        player2.player.movement.Init(false);
+        PlayerInput.Instance.Player1ChooseMask1Input += SwitchToMask1ForPlayer1;
+        PlayerInput.Instance.Player2ChooseMask1Input += SwitchToMask1ForPlayer2;
+        PlayerInput.Instance.Player1ChooseMask2Input += SwitchToMask2ForPlayer1;
+        PlayerInput.Instance.Player2ChooseMask2Input += SwitchToMask2ForPlayer2;
+        PlayerInput.Instance.Player1ChooseMask3Input += SwitchToMask3ForPlayer1;
+        PlayerInput.Instance.Player2ChooseMask3Input += SwitchToMask3ForPlayer2;
+        PlayerInput.Instance.Player1NextMaskInput += Player1NextMask;
+        PlayerInput.Instance.Player1PrevMaskInput += Player1PrevMask;
+        PlayerInput.Instance.Player2NextMaskInput += Player2NextMask;
+        PlayerInput.Instance.Player2PrevMaskInput += Player2PrevMask;
+        
         player1obj = player1.player;
         player2obj = player2.player;
 
         UIController_HUD.instance.InitUI();
     }
+
+    private void Player1PrevMask()
+    {
+        player1.player.maskmanager.ChangeMask(false);
+    }
+
+    private void Player1NextMask()
+    {
+        player1.player.maskmanager.ChangeMask(true);
+    }private void Player2PrevMask()
+    {
+        player2.player.maskmanager.ChangeMask(false);
+    }
+
+    private void Player2NextMask()
+    {
+        player2.player.maskmanager.ChangeMask(true);
+    }
+
+    private void SwitchToMask2ForPlayer1()
+    {
+        player1.player.maskmanager.ChangeMask(0);
+    }private void SwitchToMask3ForPlayer1()
+    {
+        player1.player.maskmanager.ChangeMask(1);
+    }
+
+    private void SwitchToMask1ForPlayer1()
+    {
+        player1.player.maskmanager.ChangeMask(2);
+    }private void SwitchToMask2ForPlayer2()
+    {
+        player2.player.maskmanager.ChangeMask(0);
+    }private void SwitchToMask3ForPlayer2()
+    {
+        player2.player.maskmanager.ChangeMask(1);
+    }
+
+    private void SwitchToMask1ForPlayer2()
+    {
+        player2.player.maskmanager.ChangeMask(2);
+    }
+
     public void Start()
     {
         InitGame();
@@ -45,6 +97,11 @@ public class InitLevel : MonoBehaviour
     {
         player1.player.speedController.Init();
         player2.player.speedController.Init();
+        player1.player.movement.Init(true);
+        player2.player.movement.Init(false);
+        player1.player.splineAnimator.Play();
+        player2.player.splineAnimator.Play();
+
 
     }
     private void SetUpPlayer(ref (Level level, Player player) player, bool offsetUp) 
@@ -53,7 +110,6 @@ public class InitLevel : MonoBehaviour
         player.level = Instantiate(levelPrefab,levelOffset*tmpMod, Quaternion.identity);
         player.player = Instantiate(playerPrefab);
         player.player.splineAnimator.Container = player.level.splineContainer;
-        player.player.splineAnimator.Play();
         player.player.healthSystem.ResetToFullHp();
         player.player.healthSystem.SetSplineSpeedController(player.player.speedController);
         //player.player.transform.position = player.level.playerRunRail[0].Position + new float3(0, player.level.transform.position.y + 0.5f, 0);

@@ -9,6 +9,7 @@ public class SplineSpeedController : MonoBehaviour
     [SerializeField] SplineAnimate _animate;
 
     [Header("Speed")]
+    [SerializeField] float _startSpeed = 1.0f;
     [SerializeField] float _maxSpeed = 8f;
     [SerializeField] float _acceleration = 20f;   // units/sec^2
     [SerializeField] float _deceleration = 30f;   // units/sec^2
@@ -18,6 +19,8 @@ public class SplineSpeedController : MonoBehaviour
 
     float _currentSpeed;
     float _targetSpeed;
+    float _speedMultiplier;
+    float _standardSpeedMultiplier = 1f;
 
     public void Init()
     {
@@ -27,9 +30,10 @@ public class SplineSpeedController : MonoBehaviour
         _animate.AnimationMethod = SplineAnimate.Method.Speed;
 
         // Optional: start from a clean state
-        _currentSpeed = 5f;
-        _targetSpeed = 5f;
-        ApplySpeedImmediate(5f);
+        _currentSpeed = _startSpeed;
+        _targetSpeed = _maxSpeed;
+        _speedMultiplier = _standardSpeedMultiplier;
+        ApplySpeedImmediate(_currentSpeed);
     }
 
     void Update()
@@ -42,10 +46,20 @@ public class SplineSpeedController : MonoBehaviour
 
     // --- Public API ---
 
+    public void AdjustSpeedMultiplier(float multiplier)
+    {
+        _speedMultiplier = multiplier;
+    }
+
+    public void ResetSpeedMultiplier() 
+    { 
+        _speedMultiplier = _standardSpeedMultiplier; 
+    }
+
     public void AccelerateTo(float speed)
     {
         _targetSpeed = Mathf.Clamp(speed, 0f, _maxSpeed);
-        if (!_animate.IsPlaying) _animate.Play(); 
+        if (!_animate.IsPlaying) _animate.Play();
     }
 
     public void StopSmooth()
@@ -58,7 +72,7 @@ public class SplineSpeedController : MonoBehaviour
         _targetSpeed = 0f;
         _currentSpeed = 0f;
         ApplySpeedImmediate(0f);
-        _animate.Pause(); 
+        _animate.Pause();
     }
 
     public void ResetToStart(bool playAfter = false)
@@ -81,12 +95,12 @@ public class SplineSpeedController : MonoBehaviour
     {
         if (index < 0 || index >= _checkpoints.Count) return;
 
-        _targetSpeed = 0f;
-        _currentSpeed = 0f;
-        ApplySpeedImmediate(0f);
+        _targetSpeed = _maxSpeed;
+        _currentSpeed = _startSpeed;
+        ApplySpeedImmediate(_currentSpeed);
 
-        _animate.NormalizedTime = Mathf.Clamp01(_checkpoints[index]); 
-        if (playAfter) _animate.Play(); else _animate.Pause();       
+        _animate.NormalizedTime = Mathf.Clamp01(_checkpoints[index]);
+        if (playAfter) _animate.Play(); else _animate.Pause();
     }
 
     // --- Internals ---
@@ -94,8 +108,8 @@ public class SplineSpeedController : MonoBehaviour
     void ApplySpeedImmediate(float speed)
     {
         // Preserve progress to avoid “pops” when adjusting maxSpeed during runtime.
-        float t = _animate.NormalizedTime;  
-        _animate.MaxSpeed = speed;          
-        _animate.NormalizedTime = t;        
+        float t = _animate.NormalizedTime;
+        _animate.MaxSpeed = speed;
+        _animate.NormalizedTime = t;
     }
 }
