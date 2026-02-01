@@ -101,7 +101,7 @@ public class PlayerMovement : MonoBehaviour
 
         float axis = _moveDirection.z;
 
-        Vector3 horiz = transform.forward * (axis * _activeSpeed);
+        Vector3 horiz = transform.right * (axis * _activeSpeed);
 
         v = new Vector3(horiz.x, y, horiz.z);
 

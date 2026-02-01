@@ -26,12 +26,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 818720100457507098}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.021814892, y: 0, z: 0, w: 0.999762}
+  m_LocalRotation: {x: 0.021814894, y: -0, z: -0, w: 0.99976206}
   m_LocalPosition: {x: 0, y: 2, z: -4.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6466871939811119706}
+  m_Father: {fileID: 5738210270735856490}
   m_LocalEulerAnglesHint: {x: 2.5, y: 0, z: 0}
 --- !u!20 &8643650596627822774
 Camera:
@@ -279,7 +279,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8325397399063907532}
   - {fileID: 5738210270735856490}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -431,6 +430,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2233737084576749724, guid: 80521d76e5ec7994e9647fbf75582802, type: 3}
       insertIndex: -1
       addedObject: {fileID: 560105078181883722}
+    - targetCorrespondingSourceObject: {fileID: 2233737084576749724, guid: 80521d76e5ec7994e9647fbf75582802, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8325397399063907532}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5980524666089631260, guid: 80521d76e5ec7994e9647fbf75582802, type: 3}
       insertIndex: -1
@@ -544,7 +546,7 @@ MonoBehaviour:
   groundProbeStand: {fileID: 9026844129549482214}
   groundProbeSlide: {fileID: 560105078181883722}
   groundRadius: 0.2
-  groundCheckDistance: 0.3
+  groundCheckDistance: 0.5
 --- !u!54 &5894199854179935291
 Rigidbody:
   m_ObjectHideFlags: 0
