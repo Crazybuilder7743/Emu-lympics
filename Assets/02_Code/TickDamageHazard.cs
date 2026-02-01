@@ -11,7 +11,10 @@ public class TickDamageHazard : MonoBehaviour
         {
             player = other.transform.root.GetComponent<Player>();
         }
-
+        if (player.healthSystem.immuneToGas)
+        {
+            return;
+        }
         player.healthSystem.TakeDamage (damagePerS*Time.deltaTime);
     }
 }

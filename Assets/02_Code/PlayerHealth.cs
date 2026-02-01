@@ -12,6 +12,7 @@ public class PlayerHealth
     public delegate void OnDeath();
     public OnDeath onDeath;
     private SplineSpeedController speedControl;
+    public bool immuneToGas;
 
 
     public void SetSplineSpeedController(SplineSpeedController speedController) 
