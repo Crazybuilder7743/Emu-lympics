@@ -64,6 +64,12 @@ public class UIController_HUD : MonoBehaviour
     private float _currentP2CD = 0;
     private int _p2CurrentPixelValue = 0;
 
+    private VisualElement _startButton;
+    private VisualElement _countdownContainer;
+    private Label _countdown;
+
+
+
     private bool _isUIInitialized = false;
 
 
@@ -93,7 +99,7 @@ public class UIController_HUD : MonoBehaviour
         _p2Healthbar.highValue = InitLevel.player2obj.healthSystem.maxHealth;
 
         _isUIInitialized = true;
-        TestMyUI();
+        //TestMyUI();
     }
 
     private void Update()
@@ -310,6 +316,32 @@ public class UIController_HUD : MonoBehaviour
         _p2EyesMask3 = _p2Mask3.Q<VisualElement>("Eyes");
 
 
+
+        _startButton = _root.Q<VisualElement>("StartButton");
+        _startButton.RegisterCallback<ClickEvent>(OnStartButtonClicked);
+
+        _countdownContainer = _root.Q<VisualElement>("CountdownContainer");
+        _countdown = _root.Q<Label>("Countdown");
+        
+    }
+
+    private void OnStartButtonClicked(ClickEvent eventArgs)
+    {
+        PlayCountdown();
+        _startButton.style.display = DisplayStyle.None;
+    }
+
+    private async void PlayCountdown()
+    {
+        _countdownContainer.style.display = DisplayStyle.Flex;
+        _countdown.text = "3";
+        await Task.Delay(1000);
+        _countdown.text = "2";
+        await Task.Delay(1000);
+        _countdown.text = "1";
+        await Task.Delay(1000);
+        _countdownContainer.style.display = DisplayStyle.None;
+        InitLevel.Instance.StartGane();
 
     }
 
