@@ -37,35 +37,3 @@ MonoBehaviour:
     sceneToLoad:
       m_SceneAsset: {fileID: 102900000, guid: 140f28a34890c17498a9d93bfc8e4874, type: 3}
       m_SceneName: Level3
-  - levelID: 3
-    levelName: Beach
-    mask1: {fileID: 0}
-    mask2: {fileID: 0}
-    mask3: {fileID: 0}
-    sceneToLoad:
-      m_SceneAsset: {fileID: 0}
-      m_SceneName: 
-  - levelID: 4
-    levelName: Beach
-    mask1: {fileID: 0}
-    mask2: {fileID: 0}
-    mask3: {fileID: 0}
-    sceneToLoad:
-      m_SceneAsset: {fileID: 0}
-      m_SceneName: 
-  - levelID: 5
-    levelName: Beach
-    mask1: {fileID: 0}
-    mask2: {fileID: 0}
-    mask3: {fileID: 0}
-    sceneToLoad:
-      m_SceneAsset: {fileID: 0}
-      m_SceneName: 
-  - levelID: 6
-    levelName: Beach
-    mask1: {fileID: 0}
-    mask2: {fileID: 0}
-    mask3: {fileID: 0}
-    sceneToLoad:
-      m_SceneAsset: {fileID: 0}
-      m_SceneName: 
