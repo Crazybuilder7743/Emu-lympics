@@ -31,7 +31,6 @@ public class Player : MonoBehaviour
     }
     private void EvaluateAnimatorSpeed()
     {
-        Debug.Log(speedController._currentSpeed);
         if(speedController._currentSpeed == 0)
         {
             animator.speed = 0;// / currentSpeed;
