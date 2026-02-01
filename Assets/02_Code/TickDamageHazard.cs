@@ -9,7 +9,7 @@ public class TickDamageHazard : MonoBehaviour
     {
         if(player.gameObject != other.gameObject) 
         {
-            player = other.GetComponent<Player>();
+            player = other.transform.root.GetComponent<Player>();
         }
 
         player.healthSystem.TakeDamage (damagePerS*Time.deltaTime);
