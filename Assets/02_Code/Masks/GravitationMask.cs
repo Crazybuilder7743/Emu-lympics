@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class GravitationMask : Mask
 {
-    public float reversedGravityMultiplier = -1f;
-    private const float DEFAULT_GRAVITY_MODIFER = 11f;
+    public float reversedGravityMultiplier = -2f;
+    private const float DEFAULT_GRAVITY_MODIFER = 2f;
     public static int ID = 0;
     public float effectDuration;
 

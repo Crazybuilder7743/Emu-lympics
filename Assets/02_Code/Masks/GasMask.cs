@@ -8,11 +8,19 @@ public class GasMask : Mask
     public override void Activate(Player player)
     {
         player.gameObject.layer = LayerMask.NameToLayer(GAS_LAYER_NAME);
+        foreach(GameObject t in player.gameObject.transform) 
+        {
+            t.layer = LayerMask.NameToLayer(GAS_LAYER_NAME);
+        }
     }
 
     public override void Deactivate(Player player)
     {
         player.gameObject.layer = LayerMask.NameToLayer(DEFAULT_LAYER_NAME);
+        foreach (GameObject t in player.gameObject.transform)
+        {
+            t.layer = LayerMask.NameToLayer(DEFAULT_LAYER_NAME);
+        }
     }
 
     public override int GetID()
