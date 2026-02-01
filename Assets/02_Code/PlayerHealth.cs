@@ -12,6 +12,7 @@ public class PlayerHealth
     public delegate void OnDeath();
     public OnDeath onDeath;
     private SplineSpeedController speedControl;
+    public bool immuneToGas;
 
 
     public void SetSplineSpeedController(SplineSpeedController speedController) 
@@ -26,7 +27,7 @@ public class PlayerHealth
         currentHealth = currentHealth < 0? 0: currentHealth;
 
         float x = maxHealth / Mathf.Clamp( damage,0.000000000001f,1f);
-        speedControl._currentSpeed = speedControl._currentSpeed / (1-x);
+        //speedControl._currentSpeed = speedControl._currentSpeed * (1-x);
         onTakeDamage?.Invoke(tmp,currentHealth);
         if (currentHealth <= 0)
         {

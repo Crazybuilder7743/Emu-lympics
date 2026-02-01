@@ -7,21 +7,12 @@ public class GasMask : Mask
     public static int ID = 3;
     public override void Activate(Player player)
     {
-        player.gameObject.layer = LayerMask.NameToLayer(GAS_LAYER_NAME);
-        foreach(Transform t in player.gameObject.transform) 
-        {
-
-            t.gameObject.layer = LayerMask.NameToLayer(GAS_LAYER_NAME);
-        }
+        player.healthSystem.immuneToGas = true;
     }
 
     public override void Deactivate(Player player)
     {
-        player.gameObject.layer = LayerMask.NameToLayer(DEFAULT_LAYER_NAME);
-        foreach (Transform t in player.gameObject.transform)
-        {
-            t.gameObject.layer = LayerMask.NameToLayer(DEFAULT_LAYER_NAME);
-        }
+        player.healthSystem.immuneToGas = false;
     }
 
     public override int GetID()

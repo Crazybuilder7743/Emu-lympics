@@ -49,6 +49,8 @@ public class InitLevel : MonoBehaviour
         player2obj = player2.player;
 
         UIController_HUD.instance.InitUI();
+        player1.player.maskmanager.InvokemaskChange();
+        player2.player.maskmanager.InvokemaskChange();
     }
     private void Awake()
     {

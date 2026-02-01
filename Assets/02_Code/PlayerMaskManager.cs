@@ -25,7 +25,10 @@ public class PlayerMaskManager
             masks.Add(AllMasks.Masks[maskID]);
         }
     }
-
+    public void InvokemaskChange() 
+    {
+        maskChange?.Invoke(currentID);
+    }
 
     public Mask ChangeMask(bool nextMask) 
     {
