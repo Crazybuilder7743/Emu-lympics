@@ -7,7 +7,7 @@ public class TickDamageHazard : MonoBehaviour
     Player player;
     private void OnTriggerStay(Collider other)
     {
-        if(player.gameObject != other.gameObject) 
+        if(player == null || player.gameObject != other.gameObject) 
         {
             player = other.transform.root.GetComponent<Player>();
         }
