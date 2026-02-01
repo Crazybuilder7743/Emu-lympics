@@ -72,7 +72,7 @@
 }
 
 #Healthbar > #unity-progress-bar > .unity-progress-bar__background {
-    background-color: rgb(241, 47, 47);
+    background-color: rgb(0, 0, 0);
     height: 35px;
     min-height: 35px;
     max-height: 35px;
@@ -117,7 +117,7 @@
     height: 100px;
     min-height: 100px;
     max-height: 100px;
-    top: 848px;
+    top: 930px;
     left: 705px;
     justify-content: flex-end;
     background-image: url("project://database/Assets/03_Art(HabenwirJaNetVieles)/Speedometer.png?fileID=2800000&guid=4d17eab588147e341941b53b01daf645&type=3#Speedometer");
@@ -194,4 +194,32 @@
 .startButton:hover {
     scale: 1.1 1.1;
     transition-duration: 0.1s;
+}
+
+.maskInfo {
+    flex-grow: 1;
+    flex-direction: row;
+    width: 600px;
+    min-width: 600px;
+    max-width: 600px;
+    height: 150px;
+    min-height: 150px;
+    max-height: 150px;
+}
+
+.maskDesc {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 18px;
+    padding-bottom: 0;
+    padding-left: 0;
+    -unity-font-definition: url("project://database/Assets/06_Ressources/Sacloud-R9g4M.otf?fileID=12800000&guid=b857b7333b28d874a915b022921bfb64&type=3#Sacloud-R9g4M");
+    font-size: 29px;
+    -unity-text-align: middle-center;
+    height: 102px;
+    white-space: normal;
+    top: -6px;
 }

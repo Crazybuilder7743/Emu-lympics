@@ -15,3 +15,4 @@ MonoBehaviour:
   maskID: 4
   maskName: UfoMask
   maskColor: {r: 0.11614456, g: 0.8490566, b: 0.80167955, a: 1}
+  maskDesc: DESC

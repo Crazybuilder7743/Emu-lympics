@@ -20,9 +20,9 @@
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement name="P1HealthbarContainer" class="healthBarContainer">
-                <ui:ProgressBar value="22" name="Healthbar" class="healthBar"/>
+                <ui:ProgressBar value="100" name="Healthbar" class="healthBar"/>
             </ui:VisualElement>
-            <ui:VisualElement name="P1SpeedometerContainer" class="speedometerContainer" style="top: 848px; left: 705px;">
+            <ui:VisualElement name="P1SpeedometerContainer" class="speedometerContainer">
                 <ui:VisualElement name="Speedometer" class="speedometer" style="rotate: 0;">
                     <ui:VisualElement class="speedometerDing"/>
                 </ui:VisualElement>
@@ -47,9 +47,9 @@
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement name="P2HealthbarContainer" class="healthBarContainer" style="flex-grow: 1;">
-                <ui:ProgressBar value="22" name="Healthbar" class="healthBar"/>
+                <ui:ProgressBar value="100" name="Healthbar" class="healthBar"/>
             </ui:VisualElement>
-            <ui:VisualElement name="P1SpeedometerContainer" class="speedometerContainer">
+            <ui:VisualElement name="P2SpeedometerContainer" class="speedometerContainer">
                 <ui:VisualElement name="Speedometer" class="speedometer">
                     <ui:VisualElement class="speedometerDing"/>
                 </ui:VisualElement>
@@ -61,5 +61,39 @@
     </ui:VisualElement>
     <ui:VisualElement name="CountdownContainer" style="position: absolute; width: 200px; min-width: 200px; max-width: 200px; height: 300px; min-height: 300px; max-height: 300px; left: 50%; translate: -50% 0; top: 133px; background-color: rgb(23, 214, 197); border-left-color: rgba(0, 0, 0, 0.33); border-right-color: rgba(0, 0, 0, 0.33); border-top-color: rgba(0, 0, 0, 0.33); border-bottom-color: rgba(0, 0, 0, 0.33); border-top-width: 5px; border-right-width: 5px; border-bottom-width: 5px; border-left-width: 5px; border-top-left-radius: 50px; border-top-right-radius: 50px; border-bottom-right-radius: 50px; border-bottom-left-radius: 50px; padding-top: 19px; display: none;">
         <ui:Label text="1" name="Countdown" style="width: 200px; min-width: 200px; max-width: 200px; height: 300px; min-height: 300px; max-height: 300px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-font-definition: url(&quot;project://database/Assets/06_Ressources/Sacloud-R9g4M.otf?fileID=12800000&amp;guid=b857b7333b28d874a915b022921bfb64&amp;type=3#Sacloud-R9g4M&quot;); font-size: 320px; -unity-text-align: middle-center;"/>
+    </ui:VisualElement>
+    <ui:VisualElement name="MaskInfos" style="flex-grow: 1; position: absolute; width: 600px; min-width: 600px; max-width: 600px; height: 450px; min-height: 450px; max-height: 450px; top: 299px; left: 70px; background-color: rgb(20, 255, 203); border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-top-width: 5px; border-right-width: 5px; border-bottom-width: 5px; border-left-width: 5px; border-top-left-radius: 87px; border-top-right-radius: 87px; border-bottom-right-radius: 87px; border-bottom-left-radius: 87px;">
+        <ui:VisualElement name="Mask1Info" class="maskInfo">
+            <ui:VisualElement name="Left" style="width: 30%; min-width: 30%; max-width: 30%;">
+                <ui:VisualElement name="MaskOutline" style="flex-grow: 1; width: 530px; min-width: 530px; max-width: 530px; height: 229px; min-height: 229px; max-height: 229px; background-image: url(&quot;project://database/Assets/03_Art(HabenwirJaNetVieles)/maskOutlineNormale.png?fileID=2800000&amp;guid=977083ca2dbadd049872c68f219b86ca&amp;type=3#maskOutlineNormale&quot;); scale: 0.35 0.35; transform-origin: left top; top: 35px; position: absolute; -unity-background-image-tint-color: rgb(0, 0, 0); left: auto; translate: -0.5px 0;"/>
+                <ui:VisualElement name="MaskDisplay" style="flex-grow: 1; width: 530px; min-width: 530px; max-width: 530px; height: 229px; min-height: 229px; max-height: 229px; background-image: url(&quot;project://database/Assets/03_Art(HabenwirJaNetVieles)/maskAberneu.png?fileID=2800000&amp;guid=443884854d9500841b77fbdfac6a22b1&amp;type=3#maskAberneu&quot;); scale: 0.35 0.35; transform-origin: left top; top: 35px;"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="Right" style="flex-grow: 1; width: 70%; min-width: 70%; max-width: 70%; left: -5px;">
+                <ui:Label text="Label" name="MaskName" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 10px; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-font-definition: url(&quot;project://database/Assets/06_Ressources/Sacloud-R9g4M.otf?fileID=12800000&amp;guid=b857b7333b28d874a915b022921bfb64&amp;type=3#Sacloud-R9g4M&quot;); font-size: 40px; -unity-text-align: middle-center; -unity-font-style: bold;"/>
+                <ui:Label text="asdsadasdadsadadasdasdasd" name="MaskDesc" class="maskDesc"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1; width: 590px; min-width: 590px; max-width: 590px; height: 3px; min-height: 3px; max-height: 3px; background-color: rgb(0, 0, 0); margin-bottom: -3px;"/>
+        <ui:VisualElement name="Mask2Info" style="flex-grow: 1; flex-direction: row; width: 600px; min-width: 600px; max-width: 600px; height: 150px; min-height: 150px; max-height: 150px;">
+            <ui:VisualElement name="Left" style="width: 30%; min-width: 30%; max-width: 30%;">
+                <ui:VisualElement name="MaskOutline" style="flex-grow: 1; width: 530px; min-width: 530px; max-width: 530px; height: 229px; min-height: 229px; max-height: 229px; background-image: url(&quot;project://database/Assets/03_Art(HabenwirJaNetVieles)/maskOutlineNormale.png?fileID=2800000&amp;guid=977083ca2dbadd049872c68f219b86ca&amp;type=3#maskOutlineNormale&quot;); scale: 0.35 0.35; transform-origin: left top; top: 35px; position: absolute; -unity-background-image-tint-color: rgb(0, 0, 0); left: auto; translate: -0.5px 0;"/>
+                <ui:VisualElement name="MaskDisplay" style="flex-grow: 1; width: 530px; min-width: 530px; max-width: 530px; height: 229px; min-height: 229px; max-height: 229px; background-image: url(&quot;project://database/Assets/03_Art(HabenwirJaNetVieles)/maskAberneu.png?fileID=2800000&amp;guid=443884854d9500841b77fbdfac6a22b1&amp;type=3#maskAberneu&quot;); scale: 0.35 0.35; transform-origin: left top; top: 35px;"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="Right" style="flex-grow: 1; width: 70%; min-width: 70%; max-width: 70%; left: -5px;">
+                <ui:Label text="Label" name="MaskName" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 10px; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-font-definition: url(&quot;project://database/Assets/06_Ressources/Sacloud-R9g4M.otf?fileID=12800000&amp;guid=b857b7333b28d874a915b022921bfb64&amp;type=3#Sacloud-R9g4M&quot;); font-size: 40px; -unity-text-align: middle-center; -unity-font-style: bold;"/>
+                <ui:Label text="asdsadasdadsadadasdasdasd" name="MaskDesc" class="maskDesc"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1; width: 590px; min-width: 590px; max-width: 590px; height: 3px; min-height: 3px; max-height: 3px; background-color: rgb(0, 0, 0); margin-bottom: -3px;"/>
+        <ui:VisualElement name="Mask3Info" style="flex-grow: 1; flex-direction: row; width: 600px; min-width: 600px; max-width: 600px; height: 150px; min-height: 150px; max-height: 150px;">
+            <ui:VisualElement name="Left" style="width: 30%; min-width: 30%; max-width: 30%;">
+                <ui:VisualElement name="MaskOutline" style="flex-grow: 1; width: 530px; min-width: 530px; max-width: 530px; height: 229px; min-height: 229px; max-height: 229px; background-image: url(&quot;project://database/Assets/03_Art(HabenwirJaNetVieles)/maskOutlineNormale.png?fileID=2800000&amp;guid=977083ca2dbadd049872c68f219b86ca&amp;type=3#maskOutlineNormale&quot;); scale: 0.35 0.35; transform-origin: left top; top: 35px; position: absolute; -unity-background-image-tint-color: rgb(0, 0, 0); left: auto; translate: -0.5px 0;"/>
+                <ui:VisualElement name="MaskDisplay" style="flex-grow: 1; width: 530px; min-width: 530px; max-width: 530px; height: 229px; min-height: 229px; max-height: 229px; background-image: url(&quot;project://database/Assets/03_Art(HabenwirJaNetVieles)/maskAberneu.png?fileID=2800000&amp;guid=443884854d9500841b77fbdfac6a22b1&amp;type=3#maskAberneu&quot;); scale: 0.35 0.35; transform-origin: left top; top: 35px;"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="Right" style="flex-grow: 1; width: 70%; min-width: 70%; max-width: 70%; left: -5px;">
+                <ui:Label text="Label" name="MaskName" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 10px; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-font-definition: url(&quot;project://database/Assets/06_Ressources/Sacloud-R9g4M.otf?fileID=12800000&amp;guid=b857b7333b28d874a915b022921bfb64&amp;type=3#Sacloud-R9g4M&quot;); font-size: 40px; -unity-text-align: middle-center; -unity-font-style: bold;"/>
+                <ui:Label text="asdsadasdadsadadasdasdasdsdsdsdsdsdsdsdsdsdsd" name="MaskDesc" class="maskDesc"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
