@@ -41,3 +41,17 @@
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
 }
+
+.mask {
+    width: 2048px;
+    min-width: 2048px;
+    max-width: 2048px;
+    height: 885px;
+    min-height: 885px;
+    max-height: 885px;
+    scale: 0.06 0.06;
+    transform-origin: left top;
+    background-image: url("project://database/Assets/03_Art(HabenwirJaNetVieles)/maskAberneu.png?fileID=2800000&guid=443884854d9500841b77fbdfac6a22b1&type=3#maskAberneu");
+    top: 6px;
+    left: -11px;
+}
