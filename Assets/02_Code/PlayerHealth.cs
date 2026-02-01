@@ -11,7 +11,14 @@ public class PlayerHealth
     public OnTakeDamage onTakeDamage;
     public delegate void OnDeath();
     public OnDeath onDeath;
+    private SplineSpeedController speedControl;
 
+
+    public void SetSplineSpeedController(SplineSpeedController speedController) 
+    {
+        speedControl = speedController;
+    
+    }
     public void TakeDamage(float damage) 
     {
         float tmp = currentHealth;
@@ -22,6 +29,8 @@ public class PlayerHealth
         {
             currentHealth = 0;
             onDeath?.Invoke();
+            speedControl?.ResetToStart();
+            currentHealth = maxHealth;
             //is dead
         }
     }

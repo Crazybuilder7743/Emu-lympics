@@ -4,7 +4,7 @@ using UnityEngine;
 public class SupermanMask : Mask
 {
     private const int INTERGRATION_STEPS_MS = 50;
-    public int ID = 5;
+    public static int ID = 5;
     private float lastUseTime = float.MinValue;
     private float timeTillOverChargeSec = 5f;
     private float damagePerS = 2f;
@@ -34,6 +34,8 @@ public class SupermanMask : Mask
             {
                 ownPlayer.healthSystem.TakeDamage(damagePerS * Time.deltaTime);
             }
+            ownPlayer.laserVFX.SetFloat("OverchargeAmount",Mathf.Clamp01( overchargeAmount/timeTillOverChargeSec));
+
             await Task.Delay(INTERGRATION_STEPS_MS);
         }
     
