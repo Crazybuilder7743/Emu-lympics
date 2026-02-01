@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -68,6 +69,31 @@ public class UIController_HUD : MonoBehaviour
     private VisualElement _countdownContainer;
     private Label _countdown;
 
+    [SerializeField] private float _maxSpeed = 0;
+    private VisualElement _p1SpeedometerContainer;
+    private VisualElement _p1Speedometer;
+    private VisualElement _p2SpeedometerContainer;
+    private VisualElement _p2Speedometer;
+
+    private int _maxSpeedometerAngle = 180;
+
+
+
+    private VisualElement _maskInfos;
+    private VisualElement _mask1Infos;
+    private VisualElement _mask1Display;
+    private Label _mask1Name;
+    private Label _mask1Desc;
+
+    private VisualElement _mask2Infos;
+    private VisualElement _mask2Display;
+    private Label _mask2Name;
+    private Label _mask2Desc;
+
+    private VisualElement _mask3Infos;
+    private VisualElement _mask3Display;
+    private Label _mask3Name;
+    private Label _mask3Desc;
 
 
     private bool _isUIInitialized = false;
@@ -87,6 +113,7 @@ public class UIController_HUD : MonoBehaviour
         instance = this;
 
         RegisterCallbacks();
+        RegisterMaskInfos();
     }
 
     public void InitUI()
@@ -97,6 +124,10 @@ public class UIController_HUD : MonoBehaviour
 
         _p1Healthbar.highValue = InitLevel.player1obj.healthSystem.maxHealth;
         _p2Healthbar.highValue = InitLevel.player2obj.healthSystem.maxHealth;
+
+        _maxSpeed = InitLevel.player1obj.speedController._maxSpeed;
+
+        SetMaskInfos();
 
         _isUIInitialized = true;
         //TestMyUI();
@@ -197,6 +228,17 @@ public class UIController_HUD : MonoBehaviour
         if (_isUIInitialized)
         {
             UpdateHealthbars();
+
+            float p1Speed = InitLevel.player1obj.speedController._currentSpeed;
+            float p2Speed = InitLevel.player2obj.speedController._currentSpeed;
+
+            //Debug.Log(p1Speed);
+
+            float p1Angle = GetSpeedometerAngle(p1Speed);
+            //Debug.Log(p1Angle);
+            float p2Angle = GetSpeedometerAngle(p2Speed);
+
+            UpdateSpeedometerValues(p1Angle, p2Angle);
         }
 
     }
@@ -323,12 +365,62 @@ public class UIController_HUD : MonoBehaviour
         _countdownContainer = _root.Q<VisualElement>("CountdownContainer");
         _countdown = _root.Q<Label>("Countdown");
         
+
+        _p1SpeedometerContainer = _root.Q<VisualElement>("P1SpeedometerContainer");
+        _p1Speedometer= _p1SpeedometerContainer.Q<VisualElement>("Speedometer");
+
+        _p2SpeedometerContainer = _root.Q<VisualElement>("P2SpeedometerContainer");
+        _p2Speedometer = _p2SpeedometerContainer.Q<VisualElement>("Speedometer");
+
+
+
+
+
+
     }
+
+    private void RegisterMaskInfos()
+    {
+        _maskInfos = _root.Q<VisualElement>("MaskInfos");
+
+        _mask1Infos = _maskInfos.Q<VisualElement>("Mask1Info");
+        _mask1Display = _mask1Infos.Q<VisualElement>("MaskDisplay");
+        _mask1Name = _mask1Infos.Q<Label>("MaskName");
+        _mask1Desc = _mask1Infos.Q<Label>("MaskDesc");
+
+        _mask2Infos = _maskInfos.Q<VisualElement>("Mask2Info");
+        _mask2Display = _mask2Infos.Q<VisualElement>("MaskDisplay");
+        _mask2Name = _mask2Infos.Q<Label>("MaskName");
+        _mask2Desc = _mask2Infos.Q<Label>("MaskDesc");
+
+        _mask3Infos = _maskInfos.Q<VisualElement>("Mask3Info");
+        _mask3Display = _mask3Infos.Q<VisualElement>("MaskDisplay");
+        _mask3Name = _mask3Infos.Q<Label>("MaskName");
+        _mask3Desc = _mask3Infos.Q<Label>("MaskDesc");
+    }
+
+    private void SetMaskInfos()
+    {
+        _mask1Display.style.unityBackgroundImageTintColor = LevelInfo.currentLevel.mask1.maskColor;
+        _mask1Name.text = LevelInfo.currentLevel.mask1.maskName;
+        _mask1Desc.text = LevelInfo.currentLevel.mask1.maskDesc;
+
+        _mask2Display.style.unityBackgroundImageTintColor = LevelInfo.currentLevel.mask2.maskColor;
+        _mask2Name.text = LevelInfo.currentLevel.mask2.maskName;
+        _mask2Desc.text = LevelInfo.currentLevel.mask2.maskDesc;
+
+        _mask3Display.style.unityBackgroundImageTintColor = LevelInfo.currentLevel.mask3.maskColor;
+        _mask3Name.text = LevelInfo.currentLevel.mask3.maskName;
+        _mask3Desc.text = LevelInfo.currentLevel.mask3.maskDesc;
+    }
+
+
 
     private void OnStartButtonClicked(ClickEvent eventArgs)
     {
         PlayCountdown();
         _startButton.style.display = DisplayStyle.None;
+        _maskInfos.style.display = DisplayStyle.None;
     }
 
     private async void PlayCountdown()
@@ -351,6 +443,20 @@ public class UIController_HUD : MonoBehaviour
         _p2Healthbar.value = InitLevel.player2obj.healthSystem.currentHealth;
     }
 
+    private float GetSpeedometerAngle(float speed)
+    {
+        float speed01 = speed / _maxSpeed;
+        float angle = speed01 * _maxSpeedometerAngle;
+
+        return angle;
+    }
+
+    private void UpdateSpeedometerValues(float p1Angle, float p2Angle)
+    {
+        _p1Speedometer.style.rotate = new Rotate(new Angle(p1Angle, AngleUnit.Degree));
+        //Debug.Log(p1Angle);
+        _p2Speedometer.style.rotate = new Rotate(new Angle(p2Angle, AngleUnit.Degree));
+    }
 
 
     private async void TestMyUI()

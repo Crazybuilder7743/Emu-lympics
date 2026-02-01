@@ -15,3 +15,4 @@ MonoBehaviour:
   maskID: 3
   maskName: GasMask
   maskColor: {r: 0.31748247, g: 0.9811321, b: 0, a: 1}
+  maskDesc: survive the poisonous gas
