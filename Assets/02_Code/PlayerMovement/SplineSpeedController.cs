@@ -15,8 +15,8 @@ public class SplineSpeedController : MonoBehaviour
     [SerializeField] float _acceleration = 20f;   // units/sec^2
     [SerializeField] float _deceleration = 30f;   // units/sec^2
 
-    [Header("Checkpoints (normalized 0..1)")]
-    [SerializeField] List<float> _checkpoints = new();
+    float _lastCheckpointT = 0f;
+    bool _hasCheckpoint;
 
     float _targetSpeed;
     float _speedMultiplier;
@@ -86,19 +86,24 @@ public class SplineSpeedController : MonoBehaviour
 
     public void SaveCheckpoint()
     {
-        float t = Mathf.Repeat(_animate.NormalizedTime, 1f); // 0..1 in current loop 
-        _checkpoints.Add(t);
+        _lastCheckpointT = Mathf.Repeat(_animate.NormalizedTime, 1f);
+        _hasCheckpoint = true;
     }
 
-    public void ResetToCheckpoint(int index, bool playAfter = false)
+    public void ResetToLastCheckpoint(bool playAfter = false, bool fallbackToStart = true)
     {
-        if (index < 0 || index >= _checkpoints.Count) return;
+        if (!_hasCheckpoint)
+        {
+            if (fallbackToStart)
+                ResetToStart(playAfter);
+            return;
+        }
 
         _targetSpeed = _maxSpeed;
         _currentSpeed = _startSpeed;
         ApplySpeedImmediate(_currentSpeed);
 
-        _animate.NormalizedTime = Mathf.Clamp01(_checkpoints[index]);
+        _animate.NormalizedTime = Mathf.Clamp01(_lastCheckpointT);
         if (playAfter) _animate.Play(); else _animate.Pause();
     }
 
