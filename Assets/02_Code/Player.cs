@@ -13,12 +13,29 @@ public class Player : MonoBehaviour
     public SplineAnimate splineAnimator;
     public PlayerMovement movement;
     public SplineSpeedController speedController;
+    public Animator animator;
+    public float normalSpeedforAnimation = 3f;
+    public bool started = false;
     public void Awake()
     {
         laserVFX.gameObject?.SetActive(false);
     }
     public void Update()
     {
+        if (!started)
+        {
+            return;
+        }
         healthSystem.RegenHealthTick();
+        EvaluateAnimatorSpeed();
+    }
+    private void EvaluateAnimatorSpeed()
+    {
+        if(speedController._currentSpeed == 0)
+        {
+            animator.speed = 0;// / currentSpeed;
+        }
+        animator.speed = normalSpeedforAnimation / speedController._currentSpeed;// / currentSpeed;
+
     }
 }
