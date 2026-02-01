@@ -39,8 +39,7 @@ public class SplineSpeedController : MonoBehaviour
     void Update()
     {
         float rate = (_targetSpeed >= _currentSpeed) ? _acceleration : _deceleration;
-        _currentSpeed = Mathf.MoveTowards(_currentSpeed, _targetSpeed, rate * Time.deltaTime);
-        _currentSpeed = _currentSpeed * _speedMultiplier;
+        _currentSpeed = Mathf.MoveTowards(_currentSpeed, _targetSpeed * _speedMultiplier, rate * Time.deltaTime);
         ApplySpeedImmediate(_currentSpeed);
     }
 
