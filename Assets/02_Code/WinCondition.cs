@@ -4,7 +4,7 @@ public class WinCondition : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        var player =  other.GetComponent<Player>();
+        var player =  other.transform.root.GetComponent<Player>();
         if (player.gameObject == InitLevel.player1obj.gameObject) 
         {
             InitLevel.Instance.Win(true);
