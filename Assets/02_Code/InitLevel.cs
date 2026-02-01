@@ -5,6 +5,7 @@ using UnityEngineInternal;
 
 public class InitLevel : MonoBehaviour
 {
+    public static InitLevel Instance;
     private const float DEFAULT_LEVEL_OFFFSET = 50;
     [SerializeField] Vector3 levelOffset = Vector3.down*DEFAULT_LEVEL_OFFFSET;
     [SerializeField] Level levelPrefab;
@@ -15,8 +16,10 @@ public class InitLevel : MonoBehaviour
     [SerializeField] RenderTexture player1Screen;
     [SerializeField] RenderTexture player2Screen;
     [SerializeField] Player playerPrefab;
+    private bool initBruv = false;
     private void InitGame() 
     {
+        initBruv = true;
         SetUpPlayer(ref player1,false);
         player1.player.playerSplitScreenInfo.ownCamera.targetTexture = player1Screen;
         SetUpPlayer(ref player2, true);
@@ -44,6 +47,33 @@ public class InitLevel : MonoBehaviour
         player2obj = player2.player;
 
         UIController_HUD.instance.InitUI();
+    }
+    private void Awake()
+    {
+        if(Instance==null|| Instance == this) 
+        {
+            Instance = this;
+            return;
+        }
+        Destroy(this);
+
+    }
+    public void OnDestroy()
+    {
+        if (!initBruv)
+        {
+            return;
+        }
+        PlayerInput.Instance.Player1ChooseMask1Input -= SwitchToMask1ForPlayer1;
+        PlayerInput.Instance.Player2ChooseMask1Input -= SwitchToMask1ForPlayer2;
+        PlayerInput.Instance.Player1ChooseMask2Input -= SwitchToMask2ForPlayer1;
+        PlayerInput.Instance.Player2ChooseMask2Input -= SwitchToMask2ForPlayer2;
+        PlayerInput.Instance.Player1ChooseMask3Input -= SwitchToMask3ForPlayer1;
+        PlayerInput.Instance.Player2ChooseMask3Input -= SwitchToMask3ForPlayer2;
+        PlayerInput.Instance.Player1NextMaskInput -= Player1NextMask;
+        PlayerInput.Instance.Player1PrevMaskInput -= Player1PrevMask;
+        PlayerInput.Instance.Player2NextMaskInput -= Player2NextMask;
+        PlayerInput.Instance.Player2PrevMaskInput -= Player2PrevMask;
     }
 
     private void Player1PrevMask()

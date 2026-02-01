@@ -9,7 +9,7 @@ public class BeserkMask : Mask
     public float speedModifier = 2f;
     public override void Activate(Player player)
     {
-        player.healthSystem.damageMod = damageModifier;#
+        player.healthSystem.damageMod = damageModifier;
         player.speedController.AdjustSpeedMultiplier(speedModifier);
     }
 
