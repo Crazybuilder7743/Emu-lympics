@@ -9,8 +9,8 @@ public class SplineSpeedController : MonoBehaviour
     [SerializeField] SplineAnimate _animate;
 
     [Header("Speed")]
-    [SerializeField] float _startSpeed = 1.0f;
-    [SerializeField] float _maxSpeed = 8f;
+    public float _startSpeed = 1.0f;
+    public float _maxSpeed = 8f;
     [SerializeField] float _acceleration = 20f;   // units/sec^2
     [SerializeField] float _deceleration = 30f;   // units/sec^2
 
