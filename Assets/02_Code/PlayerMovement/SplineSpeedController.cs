@@ -76,9 +76,9 @@ public class SplineSpeedController : MonoBehaviour
 
     public void ResetToStart(bool playAfter = false)
     {
-        _targetSpeed = 0f;
-        _currentSpeed = 0f;
-        ApplySpeedImmediate(0f);
+        _targetSpeed = _maxSpeed;
+        _currentSpeed = _startSpeed;
+        ApplySpeedImmediate(_currentSpeed);
 
         _animate.Restart(playAfter); // puts object at beginning 
         if (!playAfter) _animate.Pause(); // ensure it stays there
@@ -90,8 +90,10 @@ public class SplineSpeedController : MonoBehaviour
         _hasCheckpoint = true;
     }
 
-    public void ResetToLastCheckpoint(bool playAfter = false, bool fallbackToStart = true)
+    public void ResetToLastCheckpoint(bool playAfter = true, bool fallbackToStart = true)
     {
+        var moveChild = transform.GetChild(0);
+        moveChild.GetComponent<PlayerMovement>().ResetToNeutral();
         if (!_hasCheckpoint)
         {
             if (fallbackToStart)
