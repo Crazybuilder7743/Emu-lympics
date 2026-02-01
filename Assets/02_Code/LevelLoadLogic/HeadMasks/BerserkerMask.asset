@@ -15,3 +15,4 @@ MonoBehaviour:
   maskID: 2
   maskName: BerserkerMask
   maskColor: {r: 0.9433962, g: 0.1805503, b: 0.11124954, a: 1}
+  maskDesc: Run faster but be more fragile

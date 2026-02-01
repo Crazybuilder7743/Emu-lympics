@@ -138,9 +138,9 @@ public class PlayerMovement : MonoBehaviour
         );
     }
 
-    void Slide()
+    public void ResetToNeutral()
     {
-
+        transform.localPosition = Vector3.zero;
     }
     
 

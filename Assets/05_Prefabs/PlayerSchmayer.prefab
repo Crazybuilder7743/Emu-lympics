@@ -619,10 +619,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SplineSpeedController
   _animate: {fileID: 5549350797562918658}
   _startSpeed: 1
-  _maxSpeed: 8
+  _maxSpeed: 20
   _currentSpeed: 0
-  _acceleration: 20
-  _deceleration: 30
+  _acceleration: 0.25
+  _deceleration: 5
   _checkpoints: []
 --- !u!1001 &5863092832098921462
 PrefabInstance:

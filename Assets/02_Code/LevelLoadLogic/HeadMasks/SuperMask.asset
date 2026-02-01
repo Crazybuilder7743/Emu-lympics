@@ -15,3 +15,4 @@ MonoBehaviour:
   maskID: 5
   maskName: SuperMask
   maskColor: {r: 0.040628344, g: 0.24351372, b: 0.7830189, a: 1}
+  maskDesc: shoot lasers to destroy objects
