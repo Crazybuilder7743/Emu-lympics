@@ -24,7 +24,7 @@
 }
 
 .bgMask {
-    background-image: url("project://database/Assets/03_Art(HabenwirJaNetVieles)/reverseActuallyTransparentMask.png?fileID=2800000&guid=96a7a1e31afa62740b03eb5eb26a1eb6&type=3#reverseActuallyTransparentMask");
+    background-image: url("project://database/Assets/03_Art(HabenwirJaNetVieles)/ReverseMaskOutline.png?fileID=2800000&guid=d48ae11b4fac7694eb2c185b4cc73826&type=3#ReverseMaskOutline");
     width: 530px;
     height: 229px;
     min-width: 530px;
@@ -40,10 +40,11 @@
     top: 91px;
     position: absolute;
     rotate: 180deg;
+    -unity-background-image-tint-color: rgb(0, 0, 0);
 }
 
 .cooldownMask {
-    background-image: url("project://database/Assets/03_Art(HabenwirJaNetVieles)/reverseActuallyTransparentMask.png?fileID=2800000&guid=96a7a1e31afa62740b03eb5eb26a1eb6&type=3#reverseActuallyTransparentMask");
+    background-image: url("project://database/Assets/03_Art(HabenwirJaNetVieles)/ReverseMaskAberneu.png?fileID=2800000&guid=ad285f4365792c84785b4c3a8cb46ecf&type=3#ReverseMaskAberneu");
     width: 530px;
     height: 229px;
     min-width: 530px;
@@ -59,6 +60,7 @@
     top: 91px;
     -unity-background-image-tint-color: rgb(219, 53, 204);
     rotate: 180deg;
+    translate: 0.5px 0;
 }
 
 #Healthbar > #unity-progress-bar > .unity-progress-bar__background > .unity-progress-bar__progress {
