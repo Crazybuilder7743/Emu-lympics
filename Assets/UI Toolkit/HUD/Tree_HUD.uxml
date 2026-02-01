@@ -4,14 +4,17 @@
         <ui:VisualElement name="Left" style="background-image: url(&quot;project://database/Assets/03_Art(HabenwirJaNetVieles)/RenderTextures/SplitScreen1.renderTexture?fileID=8400000&amp;guid=66a283414727641408b293523eb7abda&amp;type=2#SplitScreen1&quot;); background-color: rgb(188, 119, 119); border-right-width: 5px; border-right-color: rgb(0, 0, 0); width: 50%; min-width: 50%; max-width: 50%; align-items: center;">
             <ui:VisualElement name="P1MaskContainer" class="maskContainer">
                 <ui:VisualElement name="P1Mask1" class="mask" style="height: 900px; min-height: 900px; max-height: 900px;">
+                    <ui:VisualElement name="Eyes" class="eyes" style="visibility: visible;"/>
                     <ui:VisualElement name="BGMask" class="bgMask"/>
                     <ui:VisualElement name="CooldownMask" class="cooldownMask"/>
                 </ui:VisualElement>
                 <ui:VisualElement name="P1Mask2" class="mask" style="flex-grow: 1;">
+                    <ui:VisualElement name="Eyes" class="eyes"/>
                     <ui:VisualElement name="BGMask" class="bgMask"/>
                     <ui:VisualElement name="CooldownMask" class="cooldownMask"/>
                 </ui:VisualElement>
                 <ui:VisualElement name="P1Mask3" class="mask" style="flex-grow: 1;">
+                    <ui:VisualElement name="Eyes" class="eyes"/>
                     <ui:VisualElement name="BGMask" class="bgMask"/>
                     <ui:VisualElement name="CooldownMask" class="cooldownMask"/>
                 </ui:VisualElement>
@@ -28,14 +31,17 @@
         <ui:VisualElement name="Right" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/03_Art(HabenwirJaNetVieles)/RenderTextures/SplitScreen2.renderTexture?fileID=8400000&amp;guid=86ec3758d3e77d34684cc694a76453e1&amp;type=2#SplitScreen2&quot;); background-color: rgb(231, 95, 95); border-left-color: rgb(0, 0, 0); border-left-width: 5px; width: 50%; min-width: 50%; max-width: 50%; align-items: center;">
             <ui:VisualElement name="P2MaskContainer" class="maskContainer">
                 <ui:VisualElement name="P2Mask1" class="mask">
+                    <ui:VisualElement name="Eyes" class="eyes" style="visibility: visible;"/>
                     <ui:VisualElement name="BGMask" class="bgMask"/>
                     <ui:VisualElement name="CooldownMask" class="cooldownMask"/>
                 </ui:VisualElement>
                 <ui:VisualElement name="P2Mask2" class="mask" style="flex-grow: 1;">
+                    <ui:VisualElement name="Eyes" class="eyes"/>
                     <ui:VisualElement name="BGMask" class="bgMask"/>
                     <ui:VisualElement name="CooldownMask" class="cooldownMask"/>
                 </ui:VisualElement>
                 <ui:VisualElement name="P2Mask3" class="mask" style="flex-grow: 1;">
+                    <ui:VisualElement name="Eyes" class="eyes"/>
                     <ui:VisualElement name="BGMask" class="bgMask"/>
                     <ui:VisualElement name="CooldownMask" class="cooldownMask"/>
                 </ui:VisualElement>

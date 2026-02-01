@@ -15,10 +15,13 @@ public class UIController_HUD : MonoBehaviour
     private VisualElement _p1MaskContainer;
     private VisualElement _p1Mask1;
     private VisualElement _p1CDMask1;
+    private VisualElement _p1EyesMask1;
     private VisualElement _p1Mask2;
     private VisualElement _p1CDMask2;
+    private VisualElement _p1EyesMask2;
     private VisualElement _p1Mask3;
     private VisualElement _p1CDMask3;
+    private VisualElement _p1EyesMask3;
 
     private VisualElement _p1HealthbarContainer;
     private ProgressBar _p1Healthbar;
@@ -29,10 +32,13 @@ public class UIController_HUD : MonoBehaviour
     private VisualElement _p2MaskContainer;
     private VisualElement _p2Mask1;
     private VisualElement _p2CDMask1;
+    private VisualElement _p2EyesMask1;
     private VisualElement _p2Mask2;
     private VisualElement _p2CDMask2;
+    private VisualElement _p2EyesMask2;
     private VisualElement _p2Mask3;
     private VisualElement _p2CDMask3;
+    private VisualElement _p2EyesMask3;
 
     [SerializeField] private LevelInfo _currentDebugLevel;
 
@@ -197,14 +203,26 @@ public class UIController_HUD : MonoBehaviour
             case 0:
                 _isP1Mask1OnCD = true;
                 InitLevel.player1obj.colorCoordinater.ChangeMaskColor(LevelInfo.currentLevel.mask1);
+
+                _p1EyesMask1.style.visibility = Visibility.Visible;
+                _p1EyesMask2.style.visibility = Visibility.Hidden;
+                _p1EyesMask3.style.visibility = Visibility.Hidden;
                 break;
             case 1:
                 _isP1Mask2OnCD = true;
                 InitLevel.player1obj.colorCoordinater.ChangeMaskColor(LevelInfo.currentLevel.mask2);
+
+                _p1EyesMask1.style.visibility = Visibility.Hidden;
+                _p1EyesMask2.style.visibility = Visibility.Visible;
+                _p1EyesMask3.style.visibility = Visibility.Hidden;
                 break;
             case 2:
                 _isP1Mask3OnCD = true;
                 InitLevel.player1obj.colorCoordinater.ChangeMaskColor(LevelInfo.currentLevel.mask3);
+
+                _p1EyesMask1.style.visibility = Visibility.Hidden;
+                _p1EyesMask2.style.visibility = Visibility.Hidden;
+                _p1EyesMask3.style.visibility = Visibility.Visible;
                 break;
         }
 
@@ -219,14 +237,26 @@ public class UIController_HUD : MonoBehaviour
             case 0:
                 _isP2Mask1OnCD = true;
                 InitLevel.player2obj.colorCoordinater.ChangeMaskColor(LevelInfo.currentLevel.mask1);
+                
+                _p2EyesMask1.style.visibility = Visibility.Visible;
+                _p2EyesMask2.style.visibility = Visibility.Hidden;
+                _p2EyesMask3.style.visibility = Visibility.Hidden;
                 break;
             case 1:
                 _isP2Mask2OnCD = true;
                 InitLevel.player2obj.colorCoordinater.ChangeMaskColor(LevelInfo.currentLevel.mask2);
+
+                _p2EyesMask1.style.visibility = Visibility.Hidden;
+                _p2EyesMask2.style.visibility = Visibility.Visible;
+                _p2EyesMask3.style.visibility = Visibility.Hidden;
                 break;
             case 2:
                 _isP2Mask3OnCD = true;
                 InitLevel.player2obj.colorCoordinater.ChangeMaskColor(LevelInfo.currentLevel.mask3);
+
+                _p2EyesMask1.style.visibility = Visibility.Hidden;
+                _p2EyesMask2.style.visibility = Visibility.Hidden;
+                _p2EyesMask3.style.visibility = Visibility.Visible;
                 break;
         }
 
@@ -240,14 +270,17 @@ public class UIController_HUD : MonoBehaviour
         _p1Mask1 = _p1MaskContainer.Q<VisualElement>("P1Mask1");
         _p1CDMask1 = _p1Mask1.Q<VisualElement>("CooldownMask");
         _p1CDMask1.style.unityBackgroundImageTintColor = LevelInfo.currentLevel.mask1.maskColor;
+        _p1EyesMask1 = _p1Mask1.Q<VisualElement>("Eyes");
 
         _p1Mask2 = _p1MaskContainer.Q<VisualElement>("P1Mask2");
         _p1CDMask2 = _p1Mask2.Q<VisualElement>("CooldownMask");
         _p1CDMask2.style.unityBackgroundImageTintColor = LevelInfo.currentLevel.mask2.maskColor;
+        _p1EyesMask2 = _p1Mask2.Q<VisualElement>("Eyes");
 
         _p1Mask3 = _p1MaskContainer.Q<VisualElement>("P1Mask3");
         _p1CDMask3 = _p1Mask3.Q<VisualElement>("CooldownMask");
         _p1CDMask3.style.unityBackgroundImageTintColor = LevelInfo.currentLevel.mask3.maskColor;
+        _p1EyesMask3 = _p1Mask3.Q<VisualElement>("Eyes");
 
 
         _p1HealthbarContainer = _root.Q<VisualElement>("P1HealthbarContainer");
@@ -264,14 +297,17 @@ public class UIController_HUD : MonoBehaviour
         _p2Mask1 = _p2MaskContainer.Q<VisualElement>("P2Mask1");
         _p2CDMask1 = _p2Mask1.Q<VisualElement>("CooldownMask");
         _p2CDMask1.style.unityBackgroundImageTintColor = LevelInfo.currentLevel.mask1.maskColor;
+        _p2EyesMask1 = _p2Mask1.Q<VisualElement>("Eyes");
 
         _p2Mask2 = _p2MaskContainer.Q<VisualElement>("P2Mask2");
         _p2CDMask2 = _p2Mask2.Q<VisualElement>("CooldownMask");
         _p2CDMask2.style.unityBackgroundImageTintColor = LevelInfo.currentLevel.mask2.maskColor;
+        _p2EyesMask2 = _p2Mask2.Q<VisualElement>("Eyes");
 
         _p2Mask3 = _p2MaskContainer.Q<VisualElement>("P2Mask3");
         _p2CDMask3 = _p2Mask3.Q<VisualElement>("CooldownMask");
         _p2CDMask3.style.unityBackgroundImageTintColor = LevelInfo.currentLevel.mask3.maskColor;
+        _p2EyesMask3 = _p2Mask3.Q<VisualElement>("Eyes");
 
 
 
