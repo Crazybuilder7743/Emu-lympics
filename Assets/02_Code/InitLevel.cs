@@ -40,15 +40,22 @@ public class InitLevel : MonoBehaviour
     {
         InitGame();
     }
+
+    public void StartGane() 
+    {
+        player1.player.speedController.Init();
+        player2.player.speedController.Init();
+
+    }
     private void SetUpPlayer(ref (Level level, Player player) player, bool offsetUp) 
     {
         int tmpMod = offsetUp ? -1 : 1;
         player.level = Instantiate(levelPrefab,levelOffset*tmpMod, Quaternion.identity);
         player.player = Instantiate(playerPrefab);
         player.player.splineAnimator.Container = player.level.splineContainer;
-        player.player.speedController.Init();
         player.player.splineAnimator.Play();
-        
+        player.player.healthSystem.ResetToFullHp();
+        player.player.healthSystem.SetSplineSpeedController(player.player.speedController);
         //player.player.transform.position = player.level.playerRunRail[0].Position + new float3(0, player.level.transform.position.y + 0.5f, 0);
         //player.player.transform.rotation = player.level.playerRunRail[0].Rotation;
 
