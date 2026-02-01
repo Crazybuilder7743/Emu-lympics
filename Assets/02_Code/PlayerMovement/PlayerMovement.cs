@@ -95,6 +95,7 @@ public class PlayerMovement : MonoBehaviour
 
     void ApplyMovement()
     {
+        if (!_rb) return;
         Vector3 v = _rb.linearVelocity;
 
         float y = v.y;
